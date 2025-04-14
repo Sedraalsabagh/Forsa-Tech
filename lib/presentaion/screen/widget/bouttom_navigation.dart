@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../AllOpportunity.dart';
 import '../Home.dart';
 import 'package:devloper_app/presentaion/screen/ResumeEvaluator.dart';
 import '../convertCV.dart';
@@ -16,8 +17,8 @@ class _BottomNavigationState extends State<BottomNavigation> {
   final List<Widget> pages = const [
     HomePage(),
     Welcomebot(),
+    Allopportunity(),
     ResumeEvaluatorApp(),
-    ConvertCvScreen(),
   ];
 
   @override
@@ -60,8 +61,8 @@ class _BottomNavigationState extends State<BottomNavigation> {
                   label: "mulhum",
                 ),
                 BottomNavigationBarItem(
-                  icon: Icon(Icons.person),
-                  label: "Profile",
+                  icon: Icon(Icons.search),
+                  label: "search",
                 ),
                 BottomNavigationBarItem(
                   icon: Icon(Icons.settings),

@@ -1,5 +1,6 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:devloper_app/presentaion/screen/Home.dart';
+import 'package:devloper_app/presentaion/screen/SignUP.dart';
 import 'package:devloper_app/presentaion/screen/widget/bouttom_navigation.dart';
 import 'package:devloper_app/presentaion/screen/widget/custom_botton.dart';
 import 'package:flutter/cupertino.dart';
@@ -179,6 +180,41 @@ class _LogInState extends State<LogIn> {
                       ),
                     ),
                     const SizedBox(height: 24),
+                     FadeInDown(
+                    delay: const Duration(milliseconds: 600),
+                    duration: const Duration(milliseconds: 600),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        const Text(
+                          "Don't hava an account ?",
+                          style:
+                              TextStyle(color: Color.fromARGB(255, 61, 26, 61)),
+                        ),
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => SignUp(
+                                  // onLoginTap: () {
+                                  //   Navigator.pop(context);
+                                  // },
+                                ),
+                              ),
+                            );
+                          },
+                          child: const Text(
+                            " Sign Up",
+                            style: TextStyle(
+                                color: Color(
+                                  0xFF4A154B,
+                                ),
+                                fontWeight: FontWeight.bold),
+                          ),
+                        )
+                      ],
+                    )),
                     const SizedBox(height: 40),
                     FadeInDown(
                       delay: const Duration(milliseconds: 600),

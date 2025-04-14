@@ -1,6 +1,8 @@
 import 'package:devloper_app/presentaion/screen/widget/ListTitle.dart';
 import 'package:flutter/material.dart';
 
+import 'profile_screen.dart';
+
 class Navbar extends StatelessWidget {
   const Navbar({super.key});
 
@@ -37,7 +39,12 @@ class Navbar extends StatelessWidget {
           MyListTile(
             icon: Icons.create,
             title: "Create CV",
-            onTap: () => print("Create CV clicked"),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (_) => ProfileScreen()),
+              );
+            },
           ),
           MyListTile(
             icon: Icons.upload_file,

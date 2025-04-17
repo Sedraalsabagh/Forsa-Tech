@@ -8,7 +8,9 @@ class AuthInitial extends AuthState {}
 class AuthLoading extends AuthState {}
 
 class AuthSuccess extends AuthState {
-  final LoginResponse response;
+  // final LoginResponse response;
+  // AuthSuccess(this.response);
+  final Map<String, dynamic> response;
   AuthSuccess(this.response);
 }
 

@@ -8,15 +8,36 @@ class AuthCubit extends Cubit<AuthState> {
 
   AuthCubit(this.authRepository) : super(AuthInitial());
 
+
+  // List<>
+  // لتسجيل حساب
+  Future<void> signUp(AuthModel authModel,
+      {required String email,
+      required String username,
+      required String password}) async {
+    emit(AuthLoading());
+    try {
+      final response = await authRepository.signUp(authModel);
+      emit(AuthSuccess(response));
+    } catch (e) {
+      emit(AuthFailure(e.toString()));
+    }
+  }
+
+
+
+
+
   Future<void> login(String email, String password) async {
     emit(AuthLoading());
     try {
       final request = LoginRequest(email: email, password: password);
       final response = await authRepository.login(request);
-      emit(AuthSuccess(response));
+      emit(AuthSuccess(response as Map<String, dynamic>));
     } catch (e) {
       emit(AuthFailure(e.toString())); // إعادة الرسالة المُفصّلة للخطأ
       print("Login failed: $e"); // طباعة الخطأ
     }
   }
 }
+

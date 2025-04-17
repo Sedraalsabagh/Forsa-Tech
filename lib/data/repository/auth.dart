@@ -6,6 +6,18 @@ class AuthRepository {
 
   AuthRepository({required this.authWebServices});
 
+  Future<Map<String, dynamic>> signUp(AuthModel authModel) async {
+    try {
+      final response = await authWebServices.signUp(authModel);
+      return response;
+    } catch (e) {
+      throw Exception("$e");
+    }
+  }
+
+
+
+
   Future<LoginResponse> login(LoginRequest request) async {
     try {
       final response = await authWebServices.login(request);
@@ -15,3 +27,5 @@ class AuthRepository {
     }
   }
 }
+
+

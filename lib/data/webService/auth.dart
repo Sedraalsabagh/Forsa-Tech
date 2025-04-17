@@ -14,6 +14,44 @@ class AuthWebServices {
           receiveTimeout: Duration(seconds: 60),
         ));
 
+  Future<Map<String, dynamic>> signUp(AuthModel authModel) async {
+    try {
+      Response response = await dio.post("signUp/",
+          data: authModel.toJson(),
+          options: Options(
+            headers: {
+              "Content-Type": "application/json",
+              "Accept": "application/json",
+            },
+          ));
+
+      return response.data;
+    } catch (e) {
+      print(" $e");
+      throw Exception("error");
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   Future<LoginResponse> login(LoginRequest request) async {
     try {
       Response response = await dio.post(

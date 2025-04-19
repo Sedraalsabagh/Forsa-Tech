@@ -303,9 +303,9 @@ class _LogInState extends State<LogIn> {
                               child: const Text(
                                 "Continue as Guest",
                                 style: TextStyle(
-                                  fontSize: 10,
+                                  fontSize: 11,
                                   color: Color(0xFF4A154B),
-                                  fontWeight: FontWeight.w100,
+                                  fontWeight: FontWeight.w600,
                                 ),
                               ),
                             ),

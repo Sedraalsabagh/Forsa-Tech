@@ -16,9 +16,9 @@ class _BottomNavigationState extends State<BottomNavigation> {
   int myCurrentIndex = 0;
   final List<Widget> pages = const [
     HomePage(),
-    Welcomebot(),
     Allopportunity(),
     ResumeEvaluatorApp(),
+    Welcomebot(),
   ];
 
   @override
@@ -57,16 +57,16 @@ class _BottomNavigationState extends State<BottomNavigation> {
                   label: "Home",
                 ),
                 BottomNavigationBarItem(
-                  icon: Icon(Icons.wechat, size: 34),
-                  label: "mulhum",
-                ),
-                BottomNavigationBarItem(
                   icon: Icon(Icons.search),
-                  label: "search",
+                  label: "Search",
                 ),
                 BottomNavigationBarItem(
-                  icon: Icon(Icons.settings),
-                  label: "Settings",
+                  icon: Icon(Icons.fact_check),
+                  label: "Evaluate Resume",
+                ),
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.wechat, size: 34),
+                  label: "Mulhum",
                 ),
               ],
             ),

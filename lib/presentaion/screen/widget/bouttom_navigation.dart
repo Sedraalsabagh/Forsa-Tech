@@ -51,6 +51,7 @@ class _BottomNavigationState extends State<BottomNavigation> {
                   myCurrentIndex = index;
                 });
               },
+              
               items: const [
                 BottomNavigationBarItem(
                   icon: Icon(Icons.home_outlined),

@@ -118,9 +118,9 @@ class _HomePageState extends State<HomePage> {
                   const SizedBox(height: 15),
                   const CompanyAds(),
                   const SizedBox(height: 22),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 10),
-                    child: const Text(
+                  const Padding(
+                    padding: EdgeInsets.only(left: 10),
+                    child: Text(
                       "Recommended for you",
                       style: TextStyle(
                         fontSize: 21,
@@ -167,41 +167,7 @@ class _HomePageState extends State<HomePage> {
                   const SizedBox(
                     height: 5,
                   ),
-                  // const Text(
-                  //   "All Job Opportunities",
-                  //   style: TextStyle(
-                  //     fontSize: 20,
-                  //     fontWeight: FontWeight.w700,
-                  //     color: Color(0xFF7E1E7E),
-                  //   ),
-                  // ),
-                  // const SizedBox(height: 10),
-                  // BlocProvider(
-                  //   create: (context) => JobCubit(JobRepository())..loadJobs(),
-                  //   child: BlocBuilder<JobCubit, JobState>(
-                  //     builder: (context, state) {
-                  //       if (state is JobLoading) {
-                  //         return showLoadingIndicator();
-                  //       } else if (state is JobLoaded) {
-                  //         return ListView.builder(
-                  //           shrinkWrap: true,
-                  //           physics: const NeverScrollableScrollPhysics(),
-                  //           itemCount: state.jobs.length,
-                  //           itemBuilder: (context, index) {
-                  //             return FadeInUp(
-                  //               duration:
-                  //                   Duration(milliseconds: 500 + (index * 100)),
-                  //               child: const JobListScreen()
-                  //             );
-                  //           },
-                  //         );
-                  //       } else if (state is JobError) {
-                  //         return Center(child: Text('Error: ${state.message}'));
-                  //       }
-                  //       return const SizedBox();
-                  //     },
-                  //   ),
-                  // ),
+                  
                 ],
               ),
             ),

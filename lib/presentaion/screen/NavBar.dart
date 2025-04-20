@@ -68,13 +68,13 @@ class Navbar extends StatelessWidget {
               );
             },
           ),
-             MyListTile(
-            icon: Icons.create,
-            title: "Companies",
-            onTap: () {
-             print("company clicked ");
-            },
-          ),
+          //    MyListTile(
+          //   icon: Icons.create,
+          //   title: "Companies",
+          //   onTap: () {
+          //    print("company clicked ");
+          //   },
+          // ),
           const Divider(),
           MyListTile(
             icon: Icons.settings,

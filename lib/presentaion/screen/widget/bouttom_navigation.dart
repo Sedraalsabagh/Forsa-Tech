@@ -17,12 +17,8 @@ class _BottomNavigationState extends State<BottomNavigation> {
   int myCurrentIndex = 0;
   final List<Widget> pages = const [
     HomePage(),
-<<<<<<< HEAD
-    Welcomebot(),
     Searchjobscreen(),
-=======
     Allopportunity(),
->>>>>>> 38f9cabbcc49e8fe98756662e14399204eb77807
     ResumeEvaluatorApp(),
     Welcomebot(),
   ];

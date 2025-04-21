@@ -17,9 +17,14 @@ class _BottomNavigationState extends State<BottomNavigation> {
   int myCurrentIndex = 0;
   final List<Widget> pages = const [
     HomePage(),
+<<<<<<< HEAD
     Welcomebot(),
     Searchjobscreen(),
+=======
+    Allopportunity(),
+>>>>>>> 38f9cabbcc49e8fe98756662e14399204eb77807
     ResumeEvaluatorApp(),
+    Welcomebot(),
   ];
 
   @override
@@ -52,22 +57,23 @@ class _BottomNavigationState extends State<BottomNavigation> {
                   myCurrentIndex = index;
                 });
               },
+              
               items: const [
                 BottomNavigationBarItem(
                   icon: Icon(Icons.home_outlined),
                   label: "Home",
                 ),
                 BottomNavigationBarItem(
-                  icon: Icon(Icons.wechat, size: 34),
-                  label: "mulhum",
-                ),
-                BottomNavigationBarItem(
                   icon: Icon(Icons.search),
-                  label: "search",
+                  label: "Search",
                 ),
                 BottomNavigationBarItem(
-                  icon: Icon(Icons.settings),
-                  label: "Settings",
+                  icon: Icon(Icons.fact_check),
+                  label: "Evaluate Resume",
+                ),
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.wechat, size: 34),
+                  label: "Mulhum",
                 ),
               ],
             ),

@@ -1,3 +1,5 @@
+import 'package:devloper_app/presentaion/screen/convertCV.dart';
+import 'package:devloper_app/presentaion/screen/quiz_screen.dart';
 import 'package:devloper_app/presentaion/screen/widget/ListTitle.dart';
 import 'package:flutter/material.dart';
 
@@ -14,8 +16,8 @@ class Navbar extends StatelessWidget {
         padding: EdgeInsets.zero,
         children: [
           UserAccountsDrawerHeader(
-            accountName: Text("sedraAlsabbagh"),
-            accountEmail: Text("SedraAlsabbagh2021@gmail.com "),
+            accountName: const Text("sedraAlsabbagh"),
+            accountEmail: const Text("SedraAlsabbagh2021@gmail.com "),
             currentAccountPicture: CircleAvatar(
               child: ClipOval(
                 child: Image.asset(
@@ -42,26 +44,48 @@ class Navbar extends StatelessWidget {
             onTap: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (_) => ProfileScreen()),
+                MaterialPageRoute(builder: (_) => const ProfileScreen()),
               );
             },
           ),
           MyListTile(
             icon: Icons.upload_file,
             title: "Upload CV",
-            onTap: () => print("Upload CV clicked"),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (_) => const ConvertCvScreen()),
+              );
+            }
           ),
-          Divider(),
+             MyListTile(
+            icon: Icons.quiz_sharp,
+            title: "MCQ Quiz",
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (_) => const QuizScreen()),
+              );
+            },
+          ),
+          //    MyListTile(
+          //   icon: Icons.create,
+          //   title: "Companies",
+          //   onTap: () {
+          //    print("company clicked ");
+          //   },
+          // ),
+          const Divider(),
           MyListTile(
             icon: Icons.settings,
             title: "Settings",
             onTap: () => print("Settings clicked"),
           ),
-          MyListTile(
-            icon: Icons.policy,
-            title: "Policies",
-            onTap: () => print("السياسة clicked"),
-          ),
+          // MyListTile(
+          //   icon: Icons.policy,
+          //   title: "Policies",
+          //   onTap: () => print("السياسة clicked"),
+          // ),
           MyListTile(
             icon: Icons.logout,
             title: "Log Out",

@@ -1,3 +1,4 @@
+import 'package:devloper_app/presentaion/screen/searchJobScreen.dart';
 import 'package:flutter/material.dart';
 import '../AllOpportunity.dart';
 import '../Home.dart';
@@ -17,7 +18,7 @@ class _BottomNavigationState extends State<BottomNavigation> {
   final List<Widget> pages = const [
     HomePage(),
     Welcomebot(),
-    Allopportunity(),
+    Searchjobscreen(),
     ResumeEvaluatorApp(),
   ];
 

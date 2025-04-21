@@ -1,4 +1,4 @@
-final baseUrl = "https://forsatech.onrender.com/";
+final baseUrl = "http://127.0.0.1:8000/";
 
 const loginscreen = "auth/LogIn/";
 

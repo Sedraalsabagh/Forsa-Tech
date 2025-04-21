@@ -1,3 +1,4 @@
+import 'package:devloper_app/presentaion/screen/searchJobScreen.dart';
 import 'package:devloper_app/presentaion/screen/welcomeBot.dart';
 
 import 'presentaion/screen/widget/bouttom_navigation.dart';

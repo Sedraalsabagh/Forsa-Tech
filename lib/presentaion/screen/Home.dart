@@ -143,7 +143,7 @@ class _HomePageState extends State<HomePage> {
                             itemBuilder: (context, index) {
                               final jobs = state.recommendations[index];
                               final imageName = jobImages[index %
-                                  jobImages.length]; // اختيار صورة بشكل دائري
+                                  jobImages.length]; 
               
                               return SizedBox(
                                 width: 250,
@@ -152,7 +152,7 @@ class _HomePageState extends State<HomePage> {
                                   title: jobs.title,
               
                                   imageUrl: imageName,
-                                  date: '', // تمرير اسم الصورة إلى البطاقة
+                                  date: '', 
                                 ),
                               );
                             },

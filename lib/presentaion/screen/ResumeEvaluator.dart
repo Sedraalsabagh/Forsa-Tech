@@ -47,13 +47,11 @@ class _ResumeEvaluatorAppState extends State<ResumeEvaluatorApp> {
 
       if (result != null) {
         if (kIsWeb) {
-          // في الويب لا يوجد مسار فعلي للملف، لذلك نستخدم البايتات
           selectedFileBytes = result.files.single.bytes;
           selectedFileName = result.files.single.name;
           setState(() {});
           debugPrint('File (web) chosen: $selectedFileName');
         } else {
-          // في المنصات الأخرى يمكننا الحصول على المسار
           selectedFilePath = result.files.single.path;
           setState(() {});
           debugPrint('File (mobile/desktop) chosen: $selectedFilePath');
@@ -87,7 +85,7 @@ class _ResumeEvaluatorAppState extends State<ResumeEvaluatorApp> {
         child: Column(
           children: [
             Card(
-              color:Colors.white,
+              color: Colors.white,
               elevation: 3,
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(16)),
@@ -189,14 +187,22 @@ class _ResumeEvaluatorAppState extends State<ResumeEvaluatorApp> {
         children: [
           Row(
             children: [
-              const Text('Match Percentage:  ', style: TextStyle(
+              const Text(
+                'Match Percentage:  ',
+                style: TextStyle(
                     fontWeight: FontWeight.w600,
                     color: Color(0xFF4A15F4),
-                    fontSize: 16),),
-                       Text('${result.matchPercentage * 100}%',style: const TextStyle(fontSize: 14,fontWeight: FontWeight.w400,color: Colors.black),),
+                    fontSize: 16),
+              ),
+              Text(
+                '${result.matchPercentage * 100}%',
+                style: const TextStyle(
+                    fontSize: 14,
+                    fontWeight: FontWeight.w400,
+                    color: Colors.black),
+              ),
             ],
-          ) ,
-       
+          ),
           const SizedBox(height: 5),
           const Text(
             'Missing Keywords:',
@@ -209,17 +215,30 @@ class _ResumeEvaluatorAppState extends State<ResumeEvaluatorApp> {
           Wrap(
             spacing: 6.0,
             children: result.missingKeywords
-                .map((keyword) => Chip(label: Text(keyword,style: const TextStyle(fontSize: 14,fontWeight: FontWeight.w400,color: Colors.black),)))
+                .map((keyword) => Chip(
+                        label: Text(
+                      keyword,
+                      style: const TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.w400,
+                          color: Colors.black),
+                    )))
                 .toList(),
           ),
           const SizedBox(height: 8),
-          const Text('Improvement Tips:', style: TextStyle(
+          const Text(
+            'Improvement Tips:',
+            style: TextStyle(
                 fontWeight: FontWeight.w600,
                 color: Color(0xFF4A15F4),
                 fontSize: 16),
           ),
-           const SizedBox(height: 4),
-          Text(result.improvementTips,style: const TextStyle(fontSize: 14,fontWeight:FontWeight.w400,color: Colors.black),),
+          const SizedBox(height: 4),
+          Text(
+            result.improvementTips,
+            style: const TextStyle(
+                fontSize: 14, fontWeight: FontWeight.w400, color: Colors.black),
+          ),
         ],
       ),
     );

@@ -28,7 +28,9 @@ class CustomSearch extends StatelessWidget {
         ],
       ),
       child: TextField(
-        style: const TextStyle(color: Color(0xFF101010)),
+        style: const TextStyle(
+          color: Colors.grey,
+        ),
         decoration: InputDecoration(
           prefixIcon: ShaderMask(
             shaderCallback: (bounds) => LinearGradient(
@@ -42,8 +44,8 @@ class CustomSearch extends StatelessWidget {
             ),
           ),
           hintText: hint,
-          hintStyle: const TextStyle(
-            color: Color(0xFF101010),
+          hintStyle: TextStyle(
+            color: Colors.grey.withOpacity(0.2),
             fontSize: 16,
           ),
           border: OutlineInputBorder(

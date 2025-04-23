@@ -752,11 +752,7 @@
       "languageVersion": "3.4"
     }
   ],
-<<<<<<< HEAD
-  "generated": "2025-04-21T15:16:07.041383Z",
-=======
-  "generated": "2025-04-21T16:35:06.054508Z",
->>>>>>> 0bee90987eb18644e8ec80233d67d9d5517f538c
+  "generated": "2025-04-23T18:16:24.304143Z",
   "generator": "pub",
   "generatorVersion": "3.6.1",
   "flutterRoot": "file:///C:/flutter_windows_3.27.3-stable/flutter",

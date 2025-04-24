@@ -4,6 +4,7 @@ import 'package:devloper_app/business_logic/cubit/job_opportunities_state.dart';
 import 'package:devloper_app/business_logic/cubit/recommentaion_cubit.dart';
 import 'package:devloper_app/constants/Colors.dart';
 import 'package:devloper_app/data/repository/Job_opportunities.dart';
+import 'package:devloper_app/presentaion/screen/All_companies.dart';
 import 'package:devloper_app/presentaion/screen/Job_opportunities.dart';
 import 'package:devloper_app/presentaion/screen/NavBar.dart';
 import 'package:devloper_app/presentaion/screen/widget/company_ads.dart';
@@ -99,22 +100,38 @@ class _HomePageState extends State<HomePage> {
                 children: [
                   const PromotionBanner(),
                   const SizedBox(height: 18),
-                  const Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
+                
                       Padding(
-                        padding:EdgeInsets.only(left: 10),
-                        child: Text(
-                          "The best companies ",
-                          style: TextStyle(
-                            fontSize: 19,
-                            // letterSpacing: 0.2,
-                            fontWeight: FontWeight.w600,
-                          ),
+                        padding:const EdgeInsets.only(left: 10),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            const Text(
+                              "The best companies ",
+                              style: TextStyle(
+                                fontSize: 19,
+                                // letterSpacing: 0.2,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                          TextButton(onPressed: () {
+                             Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => const AllCompanyScreen()),
+    );
+                          }, child: const Text( "See All",
+                              style: const TextStyle(
+                                fontSize: 16,
+                                letterSpacing: 0.2,
+                                color: Colors.purple,
+                                fontWeight: FontWeight.w600,
+                              ),),
+                             
+                            ),
+                          ],
                         ),
                       ),
-                    ],
-                  ),
+                    
                   const SizedBox(height: 15),
                   const CompanyAds(),
                   const SizedBox(height: 22),

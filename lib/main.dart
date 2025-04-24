@@ -1,3 +1,4 @@
+import 'package:devloper_app/business_logic/cubit/all_companies_cubit.dart';
 import 'package:devloper_app/business_logic/cubit/auth_cubit.dart';
 import 'package:devloper_app/business_logic/cubit/company_ads_cubit.dart';
 import 'package:devloper_app/business_logic/cubit/evaluations_cubit.dart';
@@ -5,9 +6,11 @@ import 'package:devloper_app/business_logic/cubit/job_card_cubit.dart';
 import 'package:devloper_app/business_logic/cubit/recommentaion_cubit.dart';
 import 'package:devloper_app/data/repository/auth.dart';
 import 'package:devloper_app/data/repository/company_ads.dart';
+import 'package:devloper_app/data/repository/All_company.dart';
 import 'package:devloper_app/data/repository/evaluation.dart';
 import 'package:devloper_app/data/repository/jobrepository.dart';
 import 'package:devloper_app/data/repository/recommendation.dart';
+import 'package:devloper_app/data/webService/AllcompanyWebservices.dart';
 import 'package:devloper_app/data/webService/adsWebservices.dart';
 import 'package:devloper_app/data/webService/auth.dart';
 import 'package:devloper_app/data/webService/evaluationWebServices.dart';
@@ -57,6 +60,11 @@ void main() {
               CvCubit(CVRepository(cvWebServices: CVWebServices())),
         ),
          BlocProvider( create: (context) => CompanyCubit(CompanyRepository(CompanyWebService())),),
+       BlocProvider<AllCompanyCubit>(
+  create: (context) => AllCompanyCubit(AllCompanyRepository(AllCompanyWebService())),
+),
+
+         
       ],
       child: MyWidget(appRouter: appRouter),
     ),

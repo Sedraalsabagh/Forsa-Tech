@@ -12,6 +12,7 @@ import 'package:flutter_native_splash/flutter_native_splash_web.dart';
 import 'package:network_info_plus/src/network_info_plus_web.dart';
 import 'package:printing/printing_web.dart';
 import 'package:shared_preferences_web/shared_preferences_web.dart';
+import 'package:url_launcher_web/url_launcher_web.dart';
 import 'package:flutter_web_plugins/flutter_web_plugins.dart';
 
 void registerPlugins([final Registrar? pluginRegistrar]) {
@@ -22,5 +23,6 @@ void registerPlugins([final Registrar? pluginRegistrar]) {
   NetworkInfoPlusWebPlugin.registerWith(registrar);
   PrintingPlugin.registerWith(registrar);
   SharedPreferencesPlugin.registerWith(registrar);
+  UrlLauncherPlugin.registerWith(registrar);
   registrar.registerMessageHandler();
 }

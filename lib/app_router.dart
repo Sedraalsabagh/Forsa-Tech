@@ -1,5 +1,7 @@
+import 'package:devloper_app/presentaion/screen/forsa_proflile.dart';
 import 'package:devloper_app/presentaion/screen/searchJobScreen.dart';
 import 'package:devloper_app/presentaion/screen/welcomeBot.dart';
+import 'package:devloper_app/presentaion/screen/widget/Forsa_Details.dart';
 
 import 'presentaion/screen/widget/bouttom_navigation.dart';
 
@@ -13,7 +15,7 @@ class AppRouter {
     switch (settings.name) {
       case '/':
         return MaterialPageRoute(
-          builder: (context) => const Welcomescreen(),
+          builder: (context) => const OpportunityDetailsScreen(),
         );
 
       case '/auth/login/':

@@ -1,3 +1,4 @@
+import 'package:devloper_app/constants/Colors.dart';
 import 'package:devloper_app/presentaion/screen/widget/Forsa_Details.dart';
 import 'package:devloper_app/presentaion/screen/widget/OpportunityHeaderWidget.dart';
 import 'package:devloper_app/presentaion/screen/widget/about_the_job.dart';
@@ -9,7 +10,7 @@ class OpportunityDetailsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.indigo[900],
+      backgroundColor: MyColors.myText,
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -43,6 +44,10 @@ class OpportunityDetailsScreen extends StatelessWidget {
                         "As a QA Engineer, you will be responsible for testing our mobile and web applications...",
                   ),
                   SizedBox(height: 24),
+                  AboutJobWidget(
+                    description:
+                        "As a QA Engineer, you will be responsible for testing our mobile and web applications...",
+                  ),
                 ],
               ),
             )

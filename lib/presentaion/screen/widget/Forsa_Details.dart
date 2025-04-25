@@ -21,45 +21,48 @@ class ForsaDetailsWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       color: Colors.white,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const Text("Forsa Details",
-              style: TextStyle(
-                  fontSize: 20,
-                  // fontWeight: FontWeight.bold,
-                  color: MyColors.myText)),
-          const SizedBox(height: 16),
-          infoRow(Icons.work_outline, "Experience", experience),
-          const Divider(
-            color: Colors.grey,
-            thickness: 1,
-            indent: 20,
-            endIndent: 20,
-          ),
-          infoRow(Icons.school, "Education", education),
-          const Divider(
-            color: Colors.grey,
-            thickness: 1,
-            indent: 20,
-            endIndent: 20, //
-          ),
-          infoRow(Icons.access_time, "Job Type", jobType),
-          const Divider(
-            color: Colors.grey,
-            thickness: 1, //
-            indent: 20,
-            endIndent: 20,
-          ),
-          infoRow(Icons.language, "Languages", languages),
-          const Divider(
-            color: Colors.grey,
-            thickness: 1,
-            indent: 20,
-            endIndent: 20,
-          ),
-          infoRow(Icons.leaderboard, "Job Level", level),
-        ],
+      child: Padding(
+        padding: const EdgeInsets.all(18.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Text("Forsa Details",
+                style: TextStyle(
+                    fontSize: 20,
+                    // fontWeight: FontWeight.bold,
+                    color: MyColors.myText)),
+            const SizedBox(height: 16),
+            infoRow(Icons.work_outline, "Experience", experience),
+            const Divider(
+              color: Colors.grey,
+              thickness: 1,
+              indent: 25,
+              endIndent: 25,
+            ),
+            infoRow(Icons.school, "Education", education),
+            const Divider(
+              color: Colors.grey,
+              thickness: 1,
+              indent: 25,
+              endIndent: 25, //
+            ),
+            infoRow(Icons.access_time, "Job Type", jobType),
+            const Divider(
+              color: Colors.grey,
+              thickness: 1, //
+              indent: 25,
+              endIndent: 25,
+            ),
+            infoRow(Icons.language, "Languages", languages),
+            const Divider(
+              color: Colors.grey,
+              thickness: 1,
+              indent: 25,
+              endIndent: 25,
+            ),
+            infoRow(Icons.leaderboard, "Job Level", level),
+          ],
+        ),
       ),
     );
   }
@@ -70,11 +73,16 @@ Widget infoRow(IconData icon, String title, String value) {
     padding: const EdgeInsets.only(bottom: 12),
     child: Row(
       children: [
-        Icon(icon, color: Colors.indigo),
-        const SizedBox(width: 10),
-        Text("$title: ", style: const TextStyle(fontWeight: FontWeight.bold)),
-        const SizedBox(width: 4),
-        Expanded(child: Text(value)),
+        Icon(icon, size: 18, color: const Color.fromARGB(255, 10, 10, 10)),
+        const SizedBox(width: 20),
+        Text("$title : ",
+            style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 13)),
+        const SizedBox(width: 150),
+        Expanded(
+            child: Text(
+          value,
+          style: TextStyle(fontSize: 11),
+        )),
       ],
     ),
   );

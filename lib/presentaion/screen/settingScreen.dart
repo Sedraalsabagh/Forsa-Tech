@@ -153,7 +153,7 @@ class DummyScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.redAccent,
+        backgroundColor: const Color.fromARGB(255, 160, 38, 140),
         title: Text(title),
       ),
       body: Center(

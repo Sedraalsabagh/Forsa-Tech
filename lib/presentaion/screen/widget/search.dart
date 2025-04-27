@@ -16,20 +16,21 @@ class CustomSearch extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: 36,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(16),
+        borderRadius: BorderRadius.circular(30),
         color: Colors.white,
         boxShadow: [
           BoxShadow(
-            color: Colors.grey.withOpacity(0.2),
-            blurRadius: 10,
+            color: const Color.fromARGB(255, 250, 249, 249).withOpacity(0.2),
+            blurRadius: 100,
             offset: const Offset(0, 5),
           ),
         ],
       ),
       child: TextField(
         style: const TextStyle(
-          color: Colors.grey,
+          color: Color.fromARGB(255, 30, 24, 24),
         ),
         decoration: InputDecoration(
           prefixIcon: ShaderMask(
@@ -38,15 +39,12 @@ class CustomSearch extends StatelessWidget {
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
             ).createShader(bounds),
-            child: Icon(
-              icon,
-              color: Colors.white,
-            ),
+            child: Icon(icon, color: Colors.white, size: 19),
           ),
           hintText: hint,
           hintStyle: TextStyle(
-            color: Colors.grey.withOpacity(0.2),
-            fontSize: 16,
+            color: const Color.fromARGB(255, 9, 7, 7).withOpacity(0.6),
+            fontSize: 13,
           ),
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(16),

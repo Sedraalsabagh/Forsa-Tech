@@ -28,7 +28,8 @@ class JobCardO extends StatelessWidget {
                       ? NetworkImage(job.companyLogo!)
                       : null,
                   child: job.companyLogo == null
-                      ? Icon(Icons.business, color: Colors.blueAccent)
+                      ? Icon(Icons.business,
+                          color: const Color.fromARGB(255, 150, 155, 163))
                       : null,
                 ),
                 const SizedBox(width: 12),
@@ -58,15 +59,18 @@ class JobCardO extends StatelessWidget {
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                _buildDetailRow('Experience Level:', job.experienceLevel ?? ''),
+                _buildDetailRow('joاb role :', job.experienceLevel ?? ''),
+                _buildDetailRow('job type :', job.yearsOfExperience ?? ''),
                 _buildDetailRow(
-                    'Years of Experience:', job.yearsOfExperience ?? ''),
+                    ' Experience years:', job.yearsOfExperience ?? ''),
+                _buildDetailRow(' job level:', job.yearsOfExperience ?? ''),
               ],
             ),
             const SizedBox(height: 16),
             Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Icon(Icons.location_on, size: 20, color: Colors.grey),
+                const Icon(Icons.location_on, size: 16, color: Colors.grey),
                 const SizedBox(width: 4),
                 Expanded(
                   child: Text(
@@ -90,7 +94,7 @@ class JobCardO extends StatelessWidget {
       child: Row(
         children: [
           SizedBox(
-            width: 140,
+            width: 120,
             child: Text(
               title,
               style: const TextStyle(
@@ -98,9 +102,7 @@ class JobCardO extends StatelessWidget {
               ),
             ),
           ),
-          Expanded(
-            child: Text(value),
-          ),
+          Text(value),
         ],
       ),
     );

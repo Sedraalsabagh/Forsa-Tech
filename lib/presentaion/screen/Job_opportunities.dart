@@ -6,18 +6,19 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:animate_do/animate_do.dart';
 
-
 class JobListScreen extends StatelessWidget {
   const JobListScreen({Key? key}) : super(key: key);
-  
+
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => JobCubit(JobRepository())..loadJobs(),
       child: Scaffold(
-        appBar: AppBar(title: const Text('Job opportunities',style: TextStyle(color: Colors.white)),
-        centerTitle: true,
-         leading: const Icon(Icons.arrow_back, color: Colors.white),
+        appBar: AppBar(
+          title: const Text('Job opportunities',
+              style: TextStyle(color: Colors.white)),
+          centerTitle: true,
+          leading: const Icon(Icons.arrow_back, color: Colors.white),
           flexibleSpace: Container(
             decoration: const BoxDecoration(
               gradient: LinearGradient(
@@ -29,7 +30,8 @@ class JobListScreen extends StatelessWidget {
                 end: Alignment.bottomRight,
               ),
             ),
-          ),),
+          ),
+        ),
         body: BlocBuilder<JobCubit, JobState>(
           builder: (context, state) {
             if (state is JobLoading) {
@@ -75,7 +77,7 @@ class JobListScreen extends StatelessWidget {
                                 fontWeight: FontWeight.w500,
                               ),
                             ),
-                             const SizedBox(height: 10),
+                            const SizedBox(height: 10),
                             Text(
                               'Experience ${job.experience}',
                               style: const TextStyle(
@@ -92,24 +94,25 @@ class JobListScreen extends StatelessWidget {
                               ),
                             ),
                             const SizedBox(height: 10),
-                            
                             Container(
                               alignment: Alignment.bottomRight,
                               child: TextButton(
-                                onPressed: () {
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (_) => QuizScreen(
-                                        jobTitle: job.title,
-                                        requiredSkill: job.skills,
-                                        description: job.description,
+                                  onPressed: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (_) => QuizScreen(
+                                          jobTitle: job.title,
+                                          requiredSkill: job.skills,
+                                          description: job.description,
+                                        ),
                                       ),
-                                    ),
-                                  );
-                                },
-                                child: const Text('Take to Quiz',style: TextStyle(color: Colors.purple),)
-                              ),
+                                    );
+                                  },
+                                  child: const Text(
+                                    'Take to Quiz',
+                                    style: TextStyle(color: Colors.purple),
+                                  )),
                             ),
                           ],
                         ),

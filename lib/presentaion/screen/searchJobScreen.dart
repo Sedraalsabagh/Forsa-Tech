@@ -28,8 +28,8 @@ class _SearchjobscreenState extends State<Searchjobscreen> {
         children: [
           Container(
             width: double.infinity,
-            height: 150,
-            padding: const EdgeInsets.fromLTRB(20, 20, 20, 20),
+            height: 80,
+            padding: const EdgeInsets.fromLTRB(10, 18, 10, 10),
             decoration: const BoxDecoration(
               borderRadius: BorderRadius.only(
                 bottomLeft: Radius.circular(30),
@@ -39,20 +39,19 @@ class _SearchjobscreenState extends State<Searchjobscreen> {
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
                 colors: [
-                  Color.fromARGB(255, 163, 150, 150),
-                  Color.fromARGB(255, 252, 251, 252)
+                  Color.fromARGB(255, 250, 244, 244),
+                  Color.fromARGB(255, 250, 244, 244),
                 ],
               ),
             ),
             child: const Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SizedBox(height: 20),
                 CustomSearch(
                   icon: CupertinoIcons.search,
                   gradientColors: [
-                    Color.fromARGB(255, 222, 204, 223),
-                    Color.fromARGB(255, 223, 209, 223)
+                    Color.fromARGB(255, 91, 79, 92),
+                    Color.fromARGB(255, 99, 93, 99)
                   ],
                   hint: "Search your job",
                 ),

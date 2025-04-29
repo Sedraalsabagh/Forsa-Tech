@@ -1,6 +1,7 @@
 import 'package:devloper_app/data/models/opportunity.dart';
 import 'package:dio/dio.dart';
 import 'package:devloper_app/constants/String.dart';
+import 'package:devloper_app/data/models/oportunity.dart';
 
 class WebServicesJobCard {
   final Dio dio;
@@ -37,6 +38,21 @@ class WebServicesJobCard {
     } catch (e) {
       print("Unexpected Error: $e");
       throw Exception('Unexpected error occurred');
+    }
+  }
+
+  Future<Opportunity?> getOpportunityById(int id) async {
+    try {
+      Response response = await dio.get("opportunityById/$id/");
+      if (response.statusCode == 200) {
+        return Opportunity.fromJson(response.data);
+      } else {
+        print("Error: ${response.statusCode}");
+        return null;
+      }
+    } catch (e) {
+      print("Exception: $e");
+      return null;
     }
   }
 }

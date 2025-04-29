@@ -1,5 +1,4 @@
 import 'package:devloper_app/data/models/opportunity.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class JobCardO extends StatelessWidget {
@@ -28,8 +27,7 @@ class JobCardO extends StatelessWidget {
                       ? NetworkImage(job.companyLogo!)
                       : null,
                   child: job.companyLogo == null
-                      ? Icon(Icons.business,
-                          color: const Color.fromARGB(255, 150, 155, 163))
+                      ? const Icon(Icons.business, color: Colors.grey)
                       : null,
                 ),
                 const SizedBox(width: 12),
@@ -37,9 +35,9 @@ class JobCardO extends StatelessWidget {
                   child: Text(
                     job.title ?? '',
                     style: const TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                    ),
+                        fontSize: 15,
+                        fontWeight: FontWeight.w400,
+                        color: Colors.grey),
                   ),
                 ),
               ],
@@ -47,24 +45,30 @@ class JobCardO extends StatelessWidget {
             const SizedBox(height: 8),
             Row(
               children: [
-                Icon(Icons.access_time, size: 16, color: Colors.grey),
+                const SizedBox(
+                  width: 25,
+                ),
+                const Icon(Icons.access_time, size: 16, color: Colors.grey),
                 const SizedBox(width: 4),
                 Text(
                   job.postingDate ?? '',
-                  style: TextStyle(color: Colors.grey.shade600),
+                  style: TextStyle(color: Colors.grey.shade600, fontSize: 10),
                 ),
               ],
             ),
             const SizedBox(height: 16),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                _buildDetailRow('joاb role :', job.experienceLevel ?? ''),
-                _buildDetailRow('job type :', job.yearsOfExperience ?? ''),
-                _buildDetailRow(
-                    ' Experience years:', job.yearsOfExperience ?? ''),
-                _buildDetailRow(' job level:', job.yearsOfExperience ?? ''),
-              ],
+            Container(
+              color: const Color.fromARGB(255, 207, 205, 205),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  _buildDetailRow('Job Role:', job.experienceLevel ?? ''),
+                  // _buildDetailRow('Job Type:', job.jobType ?? ''),
+                  _buildDetailRow(
+                      'Experience Years:', job.yearsOfExperience ?? ''),
+                  // _buildDetailRow('Job Level:', job.jobLevel ?? ''),
+                ],
+              ),
             ),
             const SizedBox(height: 16),
             Row(
@@ -72,7 +76,7 @@ class JobCardO extends StatelessWidget {
               children: [
                 const Icon(Icons.location_on, size: 16, color: Colors.grey),
                 const SizedBox(width: 4),
-                Expanded(
+                Flexible(
                   child: Text(
                     '${job.companyName ?? ''} - ${job.location ?? ''}',
                     style: const TextStyle(
@@ -102,7 +106,9 @@ class JobCardO extends StatelessWidget {
               ),
             ),
           ),
-          Text(value),
+          Expanded(
+            child: Text(value),
+          ),
         ],
       ),
     );

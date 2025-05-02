@@ -1,6 +1,7 @@
 import 'package:devloper_app/data/models/auth.dart';
 import 'package:devloper_app/data/webService/auth.dart';
 
+
 class AuthRepository {
   late final AuthWebServices authWebServices;
 
@@ -15,17 +16,12 @@ class AuthRepository {
     }
   }
 
-
-
-
   Future<LoginResponse> login(LoginRequest request) async {
     try {
       final response = await authWebServices.login(request);
       return response;
-    } catch (e) {
+    } catch (e) {  
       throw Exception("$e");
     }
   }
 }
-
-

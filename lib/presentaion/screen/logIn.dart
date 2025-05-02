@@ -28,28 +28,28 @@ class _LogInState extends State<LogIn> {
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<AuthCubit, AuthState>(
-      listener: (context, state) {
-        if (state is AuthSuccess) {
-          print("Login Success - Response Data:");
-          print(state.response);
+     listener: (context, state) {
+  if (state is AuthSuccess) {
+    print("Login Success - Token:");
+    print(state.response.accessToken);
 
-          ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(content: Text("Login Successful")),
-          );
+    ScaffoldMessenger.of(context).showSnackBar(
+      const SnackBar(content: Text("Login Successful")),
+    );
 
-          Navigator.pushReplacement(
-            context,
-            MaterialPageRoute(builder: (_) => BottomNavigation()), //
-          );
-        } else if (state is AuthFailure) {
-          print("Login Failed - Error:");
-          print(state.error);
+    Navigator.pushReplacement(
+      context,
+      MaterialPageRoute(builder: (_) => BottomNavigation()),
+    );
+  } else if (state is AuthFailure) {
+    print("Login Failed - Error:");
+    print(state.error);
 
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(content: Text(state.error)),
-          );
-        }
-      },
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(content: Text(state.error)),
+    );
+  }
+},
       builder: (context, state) {
         return Scaffold(
           backgroundColor: const Color(0xfff8f9fD),

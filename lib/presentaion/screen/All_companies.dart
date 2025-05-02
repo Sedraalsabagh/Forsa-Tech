@@ -1,5 +1,6 @@
 import 'package:devloper_app/business_logic/cubit/all_companies_cubit.dart';
 import 'package:devloper_app/business_logic/cubit/all_companies_state.dart';
+import 'package:devloper_app/presentaion/screen/CompanyDetailScreen.dart';
 import 'package:devloper_app/presentaion/screen/widget/company_profile_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -38,12 +39,10 @@ class AllCompanyScreen extends StatelessWidget {
                       email: company.email, 
                       website: company.website,
                        onTap: () {
-        // Navigator.push(
-        //   context,
-        //   MaterialPageRoute(
-        //     builder: (context) => تفاصيل(company: company),
-        //   ),
-        // );
+         Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => CompanyDetailScreen(company: company),));
       }, 
                     );
                   },

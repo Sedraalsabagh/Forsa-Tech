@@ -1,6 +1,5 @@
 // lib/cubit/auth_state.dart
 import '../../data/models/auth.dart';
-
 abstract class AuthState {}
 
 class AuthInitial extends AuthState {}
@@ -8,9 +7,7 @@ class AuthInitial extends AuthState {}
 class AuthLoading extends AuthState {}
 
 class AuthSuccess extends AuthState {
-  // final LoginResponse response;
-  // AuthSuccess(this.response);
-  final Map<String, dynamic> response;
+  final LoginResponse response; // تغيير من Map إلى LoginResponse
   AuthSuccess(this.response);
 }
 

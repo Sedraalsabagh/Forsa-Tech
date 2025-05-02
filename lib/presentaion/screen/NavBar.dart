@@ -1,3 +1,4 @@
+import 'package:devloper_app/presentaion/screen/complaint_screen.dart';
 import 'package:devloper_app/presentaion/screen/convertCV.dart';
 import 'package:devloper_app/presentaion/screen/quiz_screen.dart';
 import 'package:devloper_app/presentaion/screen/widget/ListTitle.dart';
@@ -37,6 +38,16 @@ class Navbar extends StatelessWidget {
             icon: Icons.favorite,
             title: "Favorites",
             onTap: () => print("Favorites clicked"),
+          ),
+          MyListTile(
+            icon: Icons.feedback_outlined,
+            title: "Send your feedback",
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (_) => const ComplaintScreen()),
+              );
+            },
           ),
           MyListTile(
             icon: Icons.create,

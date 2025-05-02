@@ -30,7 +30,7 @@ class CompanyProfileCard extends StatelessWidget {
     return InkWell(
       onTap: onTap,
       child: SizedBox(
-        height: 400,
+        height: 300,
         child: Card(
           clipBehavior: Clip.antiAlias,
           margin: const EdgeInsets.symmetric(vertical: 8),
@@ -64,7 +64,7 @@ class CompanyProfileCard extends StatelessWidget {
                         child: Text(
                           name,
                           style: const TextStyle(
-                              fontSize: 22, fontWeight: FontWeight.bold),
+                              fontSize: 23, fontWeight: FontWeight.bold),
                         ),
                       ),
                     ],
@@ -77,6 +77,7 @@ class CompanyProfileCard extends StatelessWidget {
                           padding: const EdgeInsets.only(left: 70),
                           child: Row(
                             children: [
+                               const SizedBox(height: 3),
                               const Icon(Icons.location_on_outlined,
                                   color: Colors.black, size: 22),
                               const SizedBox(width: 5),
@@ -84,16 +85,16 @@ class CompanyProfileCard extends StatelessWidget {
                                   style: TextStyle(
                                       color: Colors.black,
                                       fontWeight: FontWeight.w600,
-                                      fontSize: 16)),
+                                      fontSize: 15)),
                               const SizedBox(width: 8),
                               Expanded(
                                 child: Text(
-                                  '$address _sharja_abu dhabi',
+                                  '$address',
                                   // overflow: TextOverflow.ellipsis,
                                   style: const TextStyle(
                                       color: Colors.grey,
                                       fontWeight: FontWeight.w500,
-                                      fontSize: 15),
+                                      fontSize: 14),
                                 ),
                               ),
                             ],
@@ -127,13 +128,13 @@ class CompanyProfileCard extends StatelessWidget {
                           style: TextStyle(
                               color: Colors.black,
                               fontWeight: FontWeight.w600,
-                              fontSize: 16)),
-                      const SizedBox(width: 12),
-                      Text('$employees employees',
-                          style: const TextStyle(
-                              color: Colors.grey,
-                              fontWeight: FontWeight.w500,
                               fontSize: 15)),
+                      const SizedBox(width: 12),
+                      Text('$employees employee',
+                          style:  const TextStyle(
+                              color: Colors.black87,
+                              fontWeight: FontWeight.w500,
+                              fontSize: 14)),
                     ],
                   ),
                   if (email != null && email!.isNotEmpty) ...[
@@ -147,16 +148,16 @@ class CompanyProfileCard extends StatelessWidget {
                             style: TextStyle(
                                 color: Colors.black,
                                 fontWeight: FontWeight.w600,
-                                fontSize: 16)),
+                                fontSize: 15)),
                         const SizedBox(width: 12),
                         Expanded(
                           child: Text(
                             email!,
                             overflow: TextOverflow.ellipsis,
-                            style: const TextStyle(
-                                color: Colors.grey,
+                            style:  TextStyle(
+                                color:Colors.grey[600],
                                 fontWeight: FontWeight.w500,
-                                fontSize: 15),
+                                fontSize: 14),
                           ),
                         ),
                       ],
@@ -173,7 +174,7 @@ class CompanyProfileCard extends StatelessWidget {
                             style: TextStyle(
                                 color: Colors.black,
                                 fontWeight: FontWeight.w600,
-                                fontSize: 16)),
+                                fontSize: 15)),
                         const SizedBox(width: 10),
                         Expanded(
                           child: InkWell(
@@ -200,37 +201,37 @@ class CompanyProfileCard extends StatelessWidget {
                               style: const TextStyle(
                                   color: Colors.blue,
                                   fontWeight: FontWeight.w600,
-                                  fontSize: 16),
+                                  fontSize: 15),
                             ),
                           ),
                         ),
                       ],
                     ),
                   ],
-                  if (description != null && description!.isNotEmpty) ...[
-                    const SizedBox(height: 20),
-                    const Row(
-                      children: [
-                        Icon(Icons.description_outlined,
-                            color: Colors.black, size: 22),
-                        SizedBox(width: 5),
-                        Text('Company File',
-                            style: TextStyle(
-                                color: Colors.black,
-                                fontWeight: FontWeight.w600,
-                                fontSize: 16)),
-                      ],
-                    ),
-                    const SizedBox(height: 8),
-                    Text(
-                      description!,
-                      style: const TextStyle(
-                          color: Colors.grey,
-                          fontWeight: FontWeight.w500,
-                          fontSize: 15),
-                    ),
-                  ],
-                  const SizedBox(height: 3),
+                  // if (description != null && description!.isNotEmpty) ...[
+                  //   const SizedBox(height: 25),
+                  //   const Row(
+                  //     children: [
+                  //       Icon(Icons.description_outlined,
+                  //           color: Colors.black, size: 22),
+                  //       SizedBox(width: 5),
+                  //       Text('Company File',
+                  //           style: TextStyle(
+                  //               color: Colors.black,
+                  //               fontWeight: FontWeight.w600,
+                  //               fontSize: 17)),
+                  //     ],
+                  //   ),
+                  //   const SizedBox(height: 8),
+                  //   Text(
+                  //     description!,
+                  //     style: const TextStyle(
+                  //         color:Colors.black38,
+                  //         fontWeight: FontWeight.w500,
+                  //         fontSize: 15),
+                  //   ),
+                  // ],
+                  // const SizedBox(height: 3),
                 ],
               ),
             ),

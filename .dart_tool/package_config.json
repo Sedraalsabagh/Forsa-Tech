@@ -164,6 +164,18 @@
       "languageVersion": "2.17"
     },
     {
+      "name": "device_info_plus",
+      "rootUri": "file:///C:/Users/USER%2011/AppData/Local/Pub/Cache/hosted/pub.dev/device_info_plus-9.1.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.18"
+    },
+    {
+      "name": "device_info_plus_platform_interface",
+      "rootUri": "file:///C:/Users/USER%2011/AppData/Local/Pub/Cache/hosted/pub.dev/device_info_plus_platform_interface-7.0.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.18"
+    },
+    {
       "name": "dio",
       "rootUri": "file:///C:/Users/USER%2011/AppData/Local/Pub/Cache/hosted/pub.dev/dio-5.7.0",
       "packageUri": "lib/",
@@ -212,6 +224,12 @@
       "languageVersion": "3.4"
     },
     {
+      "name": "fixnum",
+      "rootUri": "file:///C:/Users/USER%2011/AppData/Local/Pub/Cache/hosted/pub.dev/fixnum-1.1.1",
+      "packageUri": "lib/",
+      "languageVersion": "3.1"
+    },
+    {
       "name": "flutter",
       "rootUri": "file:///C:/flutter_windows_3.27.3-stable/flutter/packages/flutter",
       "packageUri": "lib/",
@@ -246,6 +264,12 @@
       "rootUri": "file:///C:/Users/USER%2011/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_offline-4.0.0",
       "packageUri": "lib/",
       "languageVersion": "3.0"
+    },
+    {
+      "name": "flutter_pdfview",
+      "rootUri": "file:///C:/Users/USER%2011/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_pdfview-1.4.0+1",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
     },
     {
       "name": "flutter_plugin_android_lifecycle",
@@ -330,6 +354,18 @@
       "rootUri": "file:///C:/Users/USER%2011/AppData/Local/Pub/Cache/hosted/pub.dev/image-4.5.2",
       "packageUri": "lib/",
       "languageVersion": "3.0"
+    },
+    {
+      "name": "intl",
+      "rootUri": "file:///C:/Users/USER%2011/AppData/Local/Pub/Cache/hosted/pub.dev/intl-0.19.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
+    },
+    {
+      "name": "js",
+      "rootUri": "file:///C:/Users/USER%2011/AppData/Local/Pub/Cache/hosted/pub.dev/js-0.7.1",
+      "packageUri": "lib/",
+      "languageVersion": "3.1"
     },
     {
       "name": "json_annotation",
@@ -626,6 +662,12 @@
       "languageVersion": "2.18"
     },
     {
+      "name": "sprintf",
+      "rootUri": "file:///C:/Users/USER%2011/AppData/Local/Pub/Cache/hosted/pub.dev/sprintf-7.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "stack_trace",
       "rootUri": "file:///C:/Users/USER%2011/AppData/Local/Pub/Cache/hosted/pub.dev/stack_trace-1.12.0",
       "packageUri": "lib/",
@@ -654,6 +696,54 @@
       "rootUri": "file:///C:/Users/USER%2011/AppData/Local/Pub/Cache/hosted/pub.dev/supercharged_dart-2.1.1",
       "packageUri": "lib/",
       "languageVersion": "2.12"
+    },
+    {
+      "name": "syncfusion_flutter_core",
+      "rootUri": "file:///C:/Users/USER%2011/AppData/Local/Pub/Cache/hosted/pub.dev/syncfusion_flutter_core-24.2.9",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
+    },
+    {
+      "name": "syncfusion_flutter_pdf",
+      "rootUri": "file:///C:/Users/USER%2011/AppData/Local/Pub/Cache/hosted/pub.dev/syncfusion_flutter_pdf-24.2.9",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
+    },
+    {
+      "name": "syncfusion_flutter_pdfviewer",
+      "rootUri": "file:///C:/Users/USER%2011/AppData/Local/Pub/Cache/hosted/pub.dev/syncfusion_flutter_pdfviewer-24.2.9",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
+    },
+    {
+      "name": "syncfusion_flutter_signaturepad",
+      "rootUri": "file:///C:/Users/USER%2011/AppData/Local/Pub/Cache/hosted/pub.dev/syncfusion_flutter_signaturepad-24.2.9",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
+    },
+    {
+      "name": "syncfusion_pdfviewer_macos",
+      "rootUri": "file:///C:/Users/USER%2011/AppData/Local/Pub/Cache/hosted/pub.dev/syncfusion_pdfviewer_macos-24.2.9",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
+    },
+    {
+      "name": "syncfusion_pdfviewer_platform_interface",
+      "rootUri": "file:///C:/Users/USER%2011/AppData/Local/Pub/Cache/hosted/pub.dev/syncfusion_pdfviewer_platform_interface-24.2.9",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
+    },
+    {
+      "name": "syncfusion_pdfviewer_web",
+      "rootUri": "file:///C:/Users/USER%2011/AppData/Local/Pub/Cache/hosted/pub.dev/syncfusion_pdfviewer_web-24.2.9",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
+    },
+    {
+      "name": "syncfusion_pdfviewer_windows",
+      "rootUri": "file:///C:/Users/USER%2011/AppData/Local/Pub/Cache/hosted/pub.dev/syncfusion_pdfviewer_windows-24.2.9",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
     },
     {
       "name": "term_glyph",
@@ -728,6 +818,12 @@
       "languageVersion": "3.4"
     },
     {
+      "name": "uuid",
+      "rootUri": "file:///C:/Users/USER%2011/AppData/Local/Pub/Cache/hosted/pub.dev/uuid-4.5.1",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
+    },
+    {
       "name": "vector_graphics",
       "rootUri": "file:///C:/Users/USER%2011/AppData/Local/Pub/Cache/hosted/pub.dev/vector_graphics-1.1.18",
       "packageUri": "lib/",
@@ -776,6 +872,12 @@
       "languageVersion": "3.5"
     },
     {
+      "name": "win32_registry",
+      "rootUri": "file:///C:/Users/USER%2011/AppData/Local/Pub/Cache/hosted/pub.dev/win32_registry-1.1.5",
+      "packageUri": "lib/",
+      "languageVersion": "3.4"
+    },
+    {
       "name": "xdg_directories",
       "rootUri": "file:///C:/Users/USER%2011/AppData/Local/Pub/Cache/hosted/pub.dev/xdg_directories-1.1.0",
       "packageUri": "lib/",
@@ -800,7 +902,7 @@
       "languageVersion": "3.4"
     }
   ],
-  "generated": "2025-04-24T09:17:52.256537Z",
+  "generated": "2025-05-02T08:07:34.003842Z",
   "generator": "pub",
   "generatorVersion": "3.6.1",
   "flutterRoot": "file:///C:/flutter_windows_3.27.3-stable/flutter",

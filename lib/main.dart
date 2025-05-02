@@ -3,6 +3,7 @@ import 'package:devloper_app/business_logic/cubit/auth_cubit.dart';
 import 'package:devloper_app/business_logic/cubit/company_ads_cubit.dart';
 import 'package:devloper_app/business_logic/cubit/evaluations_cubit.dart';
 import 'package:devloper_app/business_logic/cubit/job_card_cubit.dart';
+import 'package:devloper_app/business_logic/cubit/opportunity_cubit.dart';
 import 'package:devloper_app/business_logic/cubit/recommentaion_cubit.dart';
 import 'package:devloper_app/data/repository/auth.dart';
 import 'package:devloper_app/data/repository/company_ads.dart';
@@ -34,6 +35,11 @@ void main() {
   runApp(
     MultiBlocProvider(
       providers: [
+        BlocProvider<OpportunityCubit>(
+          create: (context) => OpportunityCubit(
+            OpportunityRepository(WebServicesJobCard()),
+          ),
+        ),
         BlocProvider<JobCardCubit>(
           create: (context) => JobCardCubit(
             JobCardRepository(WebServicesJobCard()), ////
@@ -59,12 +65,14 @@ void main() {
           create: (context) =>
               CvCubit(CVRepository(cvWebServices: CVWebServices())),
         ),
-         BlocProvider( create: (context) => CompanyCubit(CompanyRepository(CompanyWebService())),),
-       BlocProvider<AllCompanyCubit>(
-  create: (context) => AllCompanyCubit(AllCompanyRepository(AllCompanyWebService())),
-),
-
-         
+        BlocProvider(
+          create: (context) =>
+              CompanyCubit(CompanyRepository(CompanyWebService())),
+        ),
+        BlocProvider<AllCompanyCubit>(
+          create: (context) =>
+              AllCompanyCubit(AllCompanyRepository(AllCompanyWebService())),
+        ),
       ],
       child: MyWidget(appRouter: appRouter),
     ),

@@ -1,20 +1,13 @@
 import 'package:devloper_app/constants/Colors.dart';
+import 'package:devloper_app/data/models/oportunity.dart';
 import 'package:flutter/material.dart';
 
 class OpportunityHeaderWidget extends StatelessWidget {
-  final String title;
-  final String postedDate;
-  final String companyName;
-  final String location;
-  final String logoUrl;
+  final Opportunity opportunity;
 
   const OpportunityHeaderWidget({
     super.key,
-    required this.title,
-    required this.postedDate,
-    required this.companyName,
-    required this.location,
-    required this.logoUrl,
+    required this.opportunity,
   });
 
   @override
@@ -25,7 +18,7 @@ class OpportunityHeaderWidget extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(title,
+          Text(opportunity.title ?? '',
               style: const TextStyle(
                   color: Colors.white,
                   fontSize: 16,
@@ -35,7 +28,7 @@ class OpportunityHeaderWidget extends StatelessWidget {
             children: [
               const Icon(Icons.schedule, color: Colors.white70, size: 16),
               const SizedBox(width: 6),
-              Text(postedDate,
+              Text(opportunity.postingDate ?? '',
                   style: const TextStyle(
                       color: Color.fromARGB(179, 214, 183, 6), fontSize: 10)),
             ],

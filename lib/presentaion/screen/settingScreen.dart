@@ -1,3 +1,4 @@
+import 'package:devloper_app/presentaion/screen/Terms&Conditions.dart';
 import 'package:flutter/material.dart';
 
 class MenuScreen extends StatelessWidget {
@@ -14,10 +15,7 @@ class MenuScreen extends StatelessWidget {
               text: 'Terms & Conditions',
               onTap: () {
                 Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (_) =>
-                            DummyScreen(title: 'Terms & Conditions')));
+                    context, MaterialPageRoute(builder: (_) => PdfViewPage()));
               },
             ),
             MenuItem(

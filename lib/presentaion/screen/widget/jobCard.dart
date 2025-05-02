@@ -37,7 +37,7 @@ class JobCardO extends StatelessWidget {
                     style: const TextStyle(
                         fontSize: 15,
                         fontWeight: FontWeight.w400,
-                        color: Colors.grey),
+                        color: Color.fromARGB(255, 146, 145, 145)),
                   ),
                 ),
               ],
@@ -58,15 +58,28 @@ class JobCardO extends StatelessWidget {
             ),
             const SizedBox(height: 16),
             Container(
-              color: const Color.fromARGB(255, 207, 205, 205),
+              padding: const EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                color: const Color.fromARGB(255, 195, 200, 201), //
+                borderRadius: BorderRadius.circular(20), //
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey.withOpacity(0.3),
+                    spreadRadius: 2,
+                    blurRadius: 8,
+                    offset: const Offset(0, 4),
+                  ),
+                ],
+              ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  _buildDetailRow('Job Role:', job.experienceLevel ?? ''),
-                  // _buildDetailRow('Job Type:', job.jobType ?? ''),
+                  _buildDetailRow('Job Role:', job.title ?? ''),
+                  _buildDetailRow('Job Type:', job.jobType ?? ''),
                   _buildDetailRow(
                       'Experience Years:', job.yearsOfExperience ?? ''),
-                  // _buildDetailRow('Job Level:', job.jobLevel ?? ''),
+                  _buildDetailRow(
+                      'Experience Level:', job.experienceLevel ?? ''),
                 ],
               ),
             ),

@@ -53,6 +53,9 @@ dependencies:
   equatable: ^2.0.7
   shared_preferences: ^2.5.2
   url_launcher: ^6.3.1
+  flutter_pdfview: ^1.2.7
+  syncfusion_flutter_pdfviewer: ^24.1.41
+
 
 dev_dependencies:
   flutter_lints: ^3.0.0
@@ -72,6 +75,7 @@ flutter:
   assets:
     - assets/images/
     - assets/icons/
+    - assets/pdf/term.pdf
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
   # For details regarding adding assets from package dependencies, see

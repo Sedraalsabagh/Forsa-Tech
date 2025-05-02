@@ -1,20 +1,13 @@
 import 'package:devloper_app/constants/Colors.dart';
+import 'package:devloper_app/data/models/oportunity.dart';
 import 'package:flutter/material.dart';
 
 class ForsaDetailsWidget extends StatelessWidget {
-  final String experience;
-  final String education;
-  final String jobType;
-  final String languages;
-  final String level;
+  final Opportunity opportunity;
 
   const ForsaDetailsWidget({
     super.key,
-    required this.experience,
-    required this.education,
-    required this.jobType,
-    required this.languages,
-    required this.level,
+    required this.opportunity,
   });
 
   @override
@@ -32,35 +25,40 @@ class ForsaDetailsWidget extends StatelessWidget {
                     // fontWeight: FontWeight.bold,
                     color: MyColors.myText)),
             const SizedBox(height: 16),
-            infoRow(Icons.work_outline, "Experience", experience),
+            infoRow(Icons.work_outline, "Experience",
+                opportunity.yearsOfExperience ?? ''),
             const Divider(
               color: Colors.grey,
               thickness: 1,
               indent: 25,
               endIndent: 25,
             ),
-            infoRow(Icons.school, "Education", education),
+            infoRow(
+                Icons.school, "Education", opportunity.educationLevel ?? ''),
             const Divider(
               color: Colors.grey,
               thickness: 1,
               indent: 25,
               endIndent: 25, //
             ),
-            infoRow(Icons.access_time, "Job Type", jobType),
+            infoRow(Icons.access_time, "Job Type",
+                opportunity.employmentType ?? ''),
             const Divider(
               color: Colors.grey,
               thickness: 1, //
               indent: 25,
               endIndent: 25,
             ),
-            infoRow(Icons.language, "Languages", languages),
+            infoRow(Icons.language, "Languages",
+                opportunity.languagesRequired ?? ''),
             const Divider(
               color: Colors.grey,
               thickness: 1,
               indent: 25,
               endIndent: 25,
             ),
-            infoRow(Icons.leaderboard, "Job Level", level),
+            infoRow(Icons.leaderboard, "Job Level",
+                opportunity.certifications ?? ''),
           ],
         ),
       ),

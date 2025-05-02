@@ -1,12 +1,16 @@
 import 'package:devloper_app/business_logic/cubit/job_card_cubit.dart';
+import 'package:devloper_app/data/models/opportunity.dart';
+import 'package:devloper_app/presentaion/screen/forsa_proflile.dart';
 import 'package:devloper_app/presentaion/screen/widget/jobCard.dart';
 import 'package:devloper_app/presentaion/screen/widget/search.dart';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class Searchjobscreen extends StatefulWidget {
-  const Searchjobscreen({super.key});
+  const Searchjobscreen({super.key, this.job});
+  final JobCard? job;
 
   @override
   State<Searchjobscreen> createState() => _SearchjobscreenState();
@@ -16,7 +20,6 @@ class _SearchjobscreenState extends State<Searchjobscreen> {
   @override
   void initState() {
     super.initState();
-
     context.read<JobCardCubit>().getJobCards();
   }
 
@@ -72,7 +75,18 @@ class _SearchjobscreenState extends State<Searchjobscreen> {
                     padding: const EdgeInsets.all(16),
                     itemCount: jobList.length,
                     itemBuilder: (context, index) {
-                      return JobCardO(job: jobList[index]);
+                      final job = jobList[index];
+                      return GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => ForsaProfile(id: job.id!),
+                            ),
+                          );
+                        },
+                        child: JobCardO(job: job),
+                      );
                     },
                   );
                 } else if (state is JobCardError) {

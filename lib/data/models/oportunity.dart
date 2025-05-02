@@ -19,7 +19,7 @@ class Opportunity {
   final String? applicationDeadline;
   final String? status;
   final String? benefits;
-  final Company? company;
+  // final Company? company;
 
   Opportunity({
     this.id,
@@ -40,7 +40,7 @@ class Opportunity {
     this.applicationDeadline,
     this.status,
     this.benefits,
-    this.company,
+    // this.company,
   });
 
   factory Opportunity.fromJson(Map<String, dynamic> json) {
@@ -63,8 +63,8 @@ class Opportunity {
       applicationDeadline: json['application_deadline'],
       status: json['status'],
       benefits: json['benefits'],
-      company:
-          json['company'] != null ? Company.fromJson(json['company']) : null,
+      // company:
+      //     json['company'] != null ? Company.fromJson(json['company']) : null,
     );
   }
 

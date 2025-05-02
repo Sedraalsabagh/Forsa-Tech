@@ -17,7 +17,7 @@ class WebServicesJobCard {
   Future<List<JobCard>> getJobCards() async {
     try {
       Response response = await dio.get(
-        'opportunities/',
+        'Forsa/',
         options: Options(
           headers: {
             'Accept': 'application/json',
@@ -44,10 +44,16 @@ class WebServicesJobCard {
   Future<Opportunity?> getOpportunityById(int id) async {
     try {
       Response response = await dio.get("opportunityById/$id/");
-      if (response.statusCode == 200) {
+
+      print("Response data: ${response.data}");
+
+      if (response.statusCode == 200 &&
+          response.data != null &&
+          response.data is Map<String, dynamic> &&
+          response.data.containsKey('id')) {
         return Opportunity.fromJson(response.data);
       } else {
-        print("Error: ${response.statusCode}");
+        print("Opportunity not found or invalid format");
         return null;
       }
     } catch (e) {

@@ -1,7 +1,7 @@
 import 'package:devloper_app/business_logic/cubit/all_companies_cubit.dart';
 import 'package:devloper_app/business_logic/cubit/all_companies_state.dart';
 import 'package:devloper_app/presentaion/screen/CompanyDetailScreen.dart';
-import 'package:devloper_app/presentaion/screen/widget/company_profile_card.dart';
+import 'package:devloper_app/presentaion/screen/widget/company_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

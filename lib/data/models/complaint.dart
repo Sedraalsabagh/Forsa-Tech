@@ -1,19 +1,15 @@
 class Complaint {
   final String title;
-  final String? description;
-
+  final String description; 
   Complaint({
     required this.title,
-    this.description,
+    required this.description, 
   });
 
   Map<String, dynamic> toJson() {
-    final data = <String, dynamic>{
+    return <String, dynamic>{
       'title': title,
+      'description': description, 
     };
-    if (description != null && description!.isNotEmpty) {
-      data['description'] = description;
-    }
-    return data;
   }
 }

@@ -16,7 +16,7 @@ class AppRouter {
     switch (settings.name) {
       case '/':
         return MaterialPageRoute(
-          builder: (context) => Welcomebot(),
+          builder: (context) => Welcomescreen(),
         );
 
       case '/auth/login/':

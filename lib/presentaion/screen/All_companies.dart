@@ -17,6 +17,7 @@ class AllCompanyScreen extends StatelessWidget {
         }
 
         return Scaffold(
+                backgroundColor: const Color(0xfff8f9fD),
           body: Builder(
             builder: (_) {
               if (state is AllCompanyLoading) {
@@ -25,7 +26,7 @@ class AllCompanyScreen extends StatelessWidget {
                 final companies = state.companies;
 
                 return ListView.builder(
-                  padding: const EdgeInsets.all(16),
+                  padding: const EdgeInsets.all(18),
                   itemCount: companies.length,
                   itemBuilder: (context, index) {
                     final company = companies[index];

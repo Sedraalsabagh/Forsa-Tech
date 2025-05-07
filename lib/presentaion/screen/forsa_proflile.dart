@@ -6,6 +6,8 @@ import 'package:devloper_app/presentaion/screen/widget/about_the_job.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../business_logic/cubit/opportunity_state.dart';
+
 //
 
 class ForsaProfile extends StatefulWidget {

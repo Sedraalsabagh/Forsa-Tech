@@ -1,4 +1,6 @@
-part of 'opportunity_cubit.dart';
+// part of 'opportunity_cubit.dart';
+
+import 'package:devloper_app/data/models/oportunity.dart';
 
 abstract class OpportunityState {}
 

@@ -1,4 +1,5 @@
 import 'package:devloper_app/presentaion/screen/Terms&Conditions.dart';
+import 'package:devloper_app/presentaion/screen/aboutForsaTech.dart';
 import 'package:flutter/material.dart';
 
 class MenuScreen extends StatelessWidget {
@@ -32,10 +33,8 @@ class MenuScreen extends StatelessWidget {
               icon: Icons.info_outline,
               text: 'About Forsa-Tech',
               onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (_) => DummyScreen(title: 'About FotsaTech')));
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (_) => Aboutforsatech()));
               },
             ),
             MenuItem(

@@ -1,5 +1,6 @@
 import 'package:devloper_app/constants/Colors.dart';
 import 'package:devloper_app/data/models/oportunity.dart';
+import 'package:devloper_app/presentaion/screen/widget/applyDialog.dart';
 import 'package:flutter/material.dart';
 
 class OpportunityHeaderWidget extends StatelessWidget {
@@ -39,7 +40,9 @@ class OpportunityHeaderWidget extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    showIncompleteProfileDialog(context);
+                  },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.white,
                     minimumSize: Size(200, 40),

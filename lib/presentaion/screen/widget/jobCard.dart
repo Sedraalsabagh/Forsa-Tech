@@ -60,7 +60,7 @@ class JobCardO extends StatelessWidget {
             Container(
               padding: const EdgeInsets.all(12),
               decoration: BoxDecoration(
-                color: const Color.fromARGB(255, 195, 200, 201), //
+                color: Colors.grey[100], //
                 borderRadius: BorderRadius.circular(20), //
                 boxShadow: [
                   BoxShadow(

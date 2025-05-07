@@ -32,6 +32,7 @@ class CompanyProfileCard extends StatelessWidget {
       child: SizedBox(
         height: 300,
         child: Card(
+          color: Colors.white,
           clipBehavior: Clip.antiAlias,
           margin: const EdgeInsets.symmetric(vertical: 8),
           elevation: 6,
@@ -64,7 +65,7 @@ class CompanyProfileCard extends StatelessWidget {
                         child: Text(
                           name,
                           style: const TextStyle(
-                              fontSize: 23, fontWeight: FontWeight.bold),
+                              fontSize: 21.3, fontWeight: FontWeight.bold),
                         ),
                       ),
                     ],
@@ -89,10 +90,10 @@ class CompanyProfileCard extends StatelessWidget {
                               const SizedBox(width: 8),
                               Expanded(
                                 child: Text(
-                                  '$address',
+                                  address,
                                   // overflow: TextOverflow.ellipsis,
-                                  style: const TextStyle(
-                                      color: Colors.grey,
+                                  style:  TextStyle(
+                                      color:Colors.grey[600],
                                       fontWeight: FontWeight.w500,
                                       fontSize: 14),
                                 ),
@@ -132,7 +133,7 @@ class CompanyProfileCard extends StatelessWidget {
                       const SizedBox(width: 12),
                       Text('$employees employee',
                           style:  const TextStyle(
-                              color: Colors.black87,
+                              color:  Colors.grey,
                               fontWeight: FontWeight.w500,
                               fontSize: 14)),
                     ],

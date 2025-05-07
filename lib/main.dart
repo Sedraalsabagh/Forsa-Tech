@@ -1,6 +1,8 @@
 import 'package:devloper_app/business_logic/cubit/all_companies_cubit.dart';
 import 'package:devloper_app/business_logic/cubit/auth_cubit.dart';
+import 'package:devloper_app/business_logic/cubit/auth_state.dart';
 import 'package:devloper_app/business_logic/cubit/company_ads_cubit.dart';
+import 'package:devloper_app/business_logic/cubit/complaint_cubit.dart';
 import 'package:devloper_app/business_logic/cubit/evaluations_cubit.dart';
 import 'package:devloper_app/business_logic/cubit/job_card_cubit.dart';
 import 'package:devloper_app/business_logic/cubit/opportunity_cubit.dart';
@@ -72,6 +74,18 @@ void main() {
         BlocProvider<AllCompanyCubit>(
           create: (context) =>
               AllCompanyCubit(AllCompanyRepository(AllCompanyWebService())),
+        ),
+         BlocProvider<ComplaintCubit>(
+          create: (context) {
+            // اذا كان فينا  AuthCubit  منحصل على التوكن من
+            final authState = context.read<AuthCubit>().state;
+            if (authState is AuthLoggedIn) {
+              return ComplaintCubit(accessToken: authState.accessToken);
+            } else {
+              // SharedPreferences او من
+              return ComplaintCubit(accessToken: '')..loadToken();
+            }
+          },
         ),
       ],
       child: MyWidget(appRouter: appRouter),

@@ -1,5 +1,5 @@
 import 'package:animate_do/animate_do.dart';
-import 'package:devloper_app/presentaion/screen/Home.dart';
+
 import 'package:devloper_app/presentaion/screen/SignUP.dart';
 import 'package:devloper_app/presentaion/screen/widget/bouttom_navigation.dart';
 import 'package:devloper_app/presentaion/screen/widget/custom_botton.dart';
@@ -39,7 +39,7 @@ class _LogInState extends State<LogIn> {
 
     Navigator.pushReplacement(
       context,
-      MaterialPageRoute(builder: (_) => BottomNavigation()),
+      MaterialPageRoute(builder: (_) => const BottomNavigation()),
     );
   } else if (state is AuthFailure) {
     print("Login Failed - Error:");
@@ -196,7 +196,7 @@ class _LogInState extends State<LogIn> {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => SignUp(
+                                builder: (context) => const SignUp(
                                   // onLoginTap: () {
                                   //   Navigator.pop(context);
                                   // },
@@ -297,7 +297,7 @@ class _LogInState extends State<LogIn> {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => BottomNavigation()),
+                                      builder: (context) => const BottomNavigation()),
                                 );
                               },
                               child: const Text(

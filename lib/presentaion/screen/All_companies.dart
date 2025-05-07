@@ -1,7 +1,7 @@
 import 'package:devloper_app/business_logic/cubit/all_companies_cubit.dart';
 import 'package:devloper_app/business_logic/cubit/all_companies_state.dart';
 import 'package:devloper_app/presentaion/screen/CompanyDetailScreen.dart';
-import 'package:devloper_app/presentaion/screen/widget/company_profile_card.dart';
+import 'package:devloper_app/presentaion/screen/widget/company_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -17,6 +17,7 @@ class AllCompanyScreen extends StatelessWidget {
         }
 
         return Scaffold(
+                backgroundColor: const Color(0xfff8f9fD),
           body: Builder(
             builder: (_) {
               if (state is AllCompanyLoading) {
@@ -25,7 +26,7 @@ class AllCompanyScreen extends StatelessWidget {
                 final companies = state.companies;
 
                 return ListView.builder(
-                  padding: const EdgeInsets.all(16),
+                  padding: const EdgeInsets.all(18),
                   itemCount: companies.length,
                   itemBuilder: (context, index) {
                     final company = companies[index];

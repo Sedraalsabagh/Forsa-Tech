@@ -1,11 +1,6 @@
 import 'package:devloper_app/business_logic/cubit/company_ads_cubit.dart';
-import 'package:devloper_app/business_logic/cubit/job_opportunities_cubit.dart';
-import 'package:devloper_app/business_logic/cubit/job_opportunities_state.dart';
 import 'package:devloper_app/business_logic/cubit/recommentaion_cubit.dart';
-import 'package:devloper_app/constants/Colors.dart';
-import 'package:devloper_app/data/repository/Job_opportunities.dart';
 import 'package:devloper_app/presentaion/screen/All_companies.dart';
-import 'package:devloper_app/presentaion/screen/Job_opportunities.dart';
 import 'package:devloper_app/presentaion/screen/NavBar.dart';
 import 'package:devloper_app/presentaion/screen/widget/company_ads.dart';
 import 'package:devloper_app/presentaion/screen/widget/opportunity_reco.dart';
@@ -13,8 +8,7 @@ import 'package:devloper_app/presentaion/screen/widget/promotion_banner.dart';
 import 'package:devloper_app/presentaion/screen/widget/user_greeting.dart';
 import 'package:flutter/material.dart';
 import 'package:animate_do/animate_do.dart';
-import 'package:flutter_bloc/flutter_bloc.dart'; // لتأثير FadeInUp
-
+import 'package:flutter_bloc/flutter_bloc.dart'; 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 

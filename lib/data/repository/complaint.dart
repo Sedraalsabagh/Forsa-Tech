@@ -12,7 +12,7 @@ class ComplaintRepository {
   }) async {
     final complaint = Complaint(
       title: title,
-      description: description,
+      description: description ?? '', 
     );
     await webService.postComplaint(complaint);
   }

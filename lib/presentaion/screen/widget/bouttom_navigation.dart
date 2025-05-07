@@ -1,3 +1,4 @@
+import 'package:devloper_app/presentaion/screen/All_companies.dart';
 import 'package:devloper_app/presentaion/screen/searchJobScreen.dart';
 import 'package:flutter/material.dart';
 import '../AllOpportunity.dart';
@@ -14,11 +15,11 @@ class BottomNavigation extends StatefulWidget {
 }
 
 class _BottomNavigationState extends State<BottomNavigation> {
-  int myCurrentIndex = 0;
+  int myCurrentIndex = 2;
   final List<Widget> pages = const [
-    HomePage(),
-    Welcomebot(),
+    AllCompanyScreen(),
     Searchjobscreen(),
+    HomePage(),
     ResumeEvaluatorApp(),
     Welcomebot(),
   ];
@@ -55,12 +56,16 @@ class _BottomNavigationState extends State<BottomNavigation> {
               },
               items: const [
                 BottomNavigationBarItem(
-                  icon: Icon(Icons.home_outlined),
-                  label: "Home",
+                  icon: Icon(Icons.location_city_outlined),
+                  label: " Companies",
                 ),
                 BottomNavigationBarItem(
                   icon: Icon(Icons.search),
                   label: "Search",
+                ),
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.home_outlined),
+                  label: "Home",
                 ),
                 BottomNavigationBarItem(
                   icon: Icon(Icons.fact_check),

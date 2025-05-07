@@ -28,27 +28,56 @@ class _ComplaintScreenState extends State<ComplaintScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xfff8f9fD),
-      appBar: CustomAppBar(title: "Customer feedback"),
+      appBar: const CustomAppBar(title: "Customer feedback"),
       body: BlocConsumer<ComplaintCubit, ComplaintState>(
         listener: (context, state) {
           if (state.status == ComplaintStatus.success) {
             ScaffoldMessenger.of(context).showSnackBar(
-              const SnackBar(
-                content: Text('تم إرسال الشكوى بنجاح'),
-                duration: Duration(seconds: 2),
+              SnackBar(
+                content: const Row(
+                  children: [
+                    Icon(Icons.check_circle, color: Colors.white),
+                    SizedBox(width: 8),
+                    Text('Your message has been sent successfully.'),
+                  ],
+                ),
+                backgroundColor: Colors.green,
+                duration: const Duration(seconds: 3),
+                behavior: SnackBarBehavior.floating,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                action: SnackBarAction(
+                  label: 'Ok',
+                  textColor: Colors.white,
+                  onPressed: () {
+                    ScaffoldMessenger.of(context).hideCurrentSnackBar();
+                  },
+                ),
               ),
             );
-            _formKey.currentState?.reset();
+
+            // مسح الحقول بعد ما ينجح الارسال
             _titleController.clear();
             _descController.clear();
+            _formKey.currentState?.reset();
           } else if (state.status == ComplaintStatus.failure) {
             ScaffoldMessenger.of(context).showSnackBar(
               SnackBar(
-                content: Text('فشل إرسال الشكوى: ${state.error}'),
+                content: Text(state.error ?? 'Failed to send message'),
                 backgroundColor: Colors.red,
                 duration: const Duration(seconds: 3),
               ),
             );
+
+            // إذا كان الخطأ بيتعلق بالمصادقة
+            if (state.error?.contains('Session has expired') == true ||
+                state.error?.contains('You must be logged in.') == true) {
+              // توجيه المستخدم لصفحة تسجيل الدخول
+              Future.delayed(const Duration(seconds: 2), () {
+                Navigator.pushNamed(context, '/auth/login/');
+              });
+            }
           }
         },
         builder: (context, state) {
@@ -140,6 +169,12 @@ class _ComplaintScreenState extends State<ComplaintScreen> {
                         textAlign: TextAlign.start,
                         controller: _descController,
                         maxLines: 2,
+                        validator: (value) {
+                          if (value == null || value.trim().isEmpty) {
+                            return 'Please enter description'; 
+                          }
+                          return null;
+                        },
                         decoration: InputDecoration(
                           fillColor: Colors.transparent,
                           filled: true,

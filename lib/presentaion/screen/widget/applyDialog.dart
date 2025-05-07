@@ -29,8 +29,8 @@ void showIncompleteProfileDialog(BuildContext context) {
             label: const Text("Complete your education",
                 style: TextStyle(color: Colors.white)),
             style: ElevatedButton.styleFrom(
-              backgroundColor: const Color.fromARGB(255, 129, 80, 213),
-              minimumSize: const Size(200, 50),
+              backgroundColor: Colors.deepPurple,
+              minimumSize: const Size(double.infinity, 50),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(12),
               ),

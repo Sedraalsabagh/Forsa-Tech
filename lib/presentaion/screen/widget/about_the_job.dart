@@ -1,3 +1,4 @@
+import 'package:devloper_app/constants/Colors.dart';
 import 'package:flutter/material.dart';
 
 class AboutJobWidget extends StatelessWidget {
@@ -7,17 +8,39 @@ class AboutJobWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        const Text("About the Job",
-            style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
-        const SizedBox(height: 8),
-        Text(
-          description,
-          style: const TextStyle(height: 1.5, fontSize: 15),
+    return Card(
+      color: Colors.white,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(16), // نفس انحناء Forsa Details
+        side: BorderSide(color: Colors.grey.shade300), // إطار خفيف
+      ),
+      elevation: 2,
+      margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+      child: Padding(
+        padding: const EdgeInsets.all(16),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              "About the Job",
+              style: TextStyle(
+                fontSize: 20,
+                color: MyColors.myText,
+                fontWeight: FontWeight.w500,
+              ),
+            ),
+            const SizedBox(height: 12),
+            Text(
+              description,
+              style: const TextStyle(
+                fontSize: 15,
+                height: 1.6,
+                color: Colors.black87,
+              ),
+            ),
+          ],
         ),
-      ],
+      ),
     );
   }
 }

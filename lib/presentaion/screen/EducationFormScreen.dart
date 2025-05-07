@@ -73,7 +73,7 @@ class _MyFormState extends State<MyForm> {
                   ),
                 ),
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Color(0xFF00AFFF),
+                  backgroundColor: Color.fromARGB(255, 153, 72, 204),
                   foregroundColor: Colors.white,
                   padding: EdgeInsets.symmetric(vertical: 16),
                   shape: RoundedRectangleBorder(
@@ -100,7 +100,7 @@ class _MyFormState extends State<MyForm> {
                   ),
                 ),
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Color(0xFF6A1B9A),
+                  backgroundColor: Color.fromARGB(255, 153, 72, 204),
                   foregroundColor: Colors.white,
                   padding: EdgeInsets.symmetric(vertical: 16),
                   shape: RoundedRectangleBorder(

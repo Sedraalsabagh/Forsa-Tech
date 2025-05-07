@@ -4,7 +4,6 @@ import 'package:devloper_app/presentaion/screen/experience_screen.dart';
 import 'package:devloper_app/presentaion/screen/forsa_proflile.dart';
 import 'package:devloper_app/presentaion/screen/searchJobScreen.dart';
 import 'package:devloper_app/presentaion/screen/settingScreen.dart';
-import 'package:devloper_app/presentaion/screen/welcomeBot.dart';
 import 'package:devloper_app/presentaion/screen/welcomeScreen.dart';
 import 'package:devloper_app/presentaion/screen/widget/experience_form.dart';
 
@@ -16,7 +15,7 @@ class AppRouter {
     switch (settings.name) {
       case '/':
         return MaterialPageRoute(
-          builder: (context) => Welcomebot(),
+          builder: (context) => Welcomescreen(),
         );
 
       case '/auth/login/':

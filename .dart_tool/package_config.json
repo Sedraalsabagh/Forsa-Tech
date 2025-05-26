@@ -308,6 +308,12 @@
       "languageVersion": "3.2"
     },
     {
+      "name": "font_awesome_flutter",
+      "rootUri": "file:///C:/Users/USER%2011/AppData/Local/Pub/Cache/hosted/pub.dev/font_awesome_flutter-10.8.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
+    },
+    {
       "name": "get_it",
       "rootUri": "file:///C:/Users/USER%2011/AppData/Local/Pub/Cache/hosted/pub.dev/get_it-8.0.3",
       "packageUri": "lib/",
@@ -902,7 +908,7 @@
       "languageVersion": "3.4"
     }
   ],
-  "generated": "2025-05-07T16:15:52.632915Z",
+  "generated": "2025-05-24T14:35:51.480521Z",
   "generator": "pub",
   "generatorVersion": "3.6.1",
   "flutterRoot": "file:///C:/flutter_windows_3.27.3-stable/flutter",

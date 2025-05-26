@@ -1,0 +1,1 @@
+ C:\\Users\\USER\ 11\\Desktop\\Forsa\\.dart_tool\\flutter_build\\906847b5a69d4337ff18bc5449fd9b1f\\native_assets.yaml: 

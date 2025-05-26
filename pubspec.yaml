@@ -55,6 +55,7 @@ dependencies:
   url_launcher: ^6.3.1
   flutter_pdfview: ^1.2.7
   syncfusion_flutter_pdfviewer: ^24.1.41
+  font_awesome_flutter: ^10.5.0
 
 
 dev_dependencies:

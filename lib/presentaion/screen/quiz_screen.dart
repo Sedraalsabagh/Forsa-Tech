@@ -1,5 +1,7 @@
 // import 'package:animate_do/animate_do.dart';
 import 'package:animate_do/animate_do.dart';
+import 'package:devloper_app/constants/Colors.dart';
+import 'package:devloper_app/presentaion/screen/widget/custom_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -12,7 +14,8 @@ class QuizScreen extends StatefulWidget {
   final String? requiredSkill;
   final String? description;
 
-  const QuizScreen({Key? key, this.jobTitle, this.requiredSkill, this.description})
+  const QuizScreen(
+      {Key? key, this.jobTitle, this.requiredSkill, this.description})
       : super(key: key);
 
   @override
@@ -21,7 +24,8 @@ class QuizScreen extends StatefulWidget {
 
 class _QuizScreenState extends State<QuizScreen> {
   final TextEditingController _titleController = TextEditingController();
-  final TextEditingController _requiredSkillController = TextEditingController();
+  final TextEditingController _requiredSkillController =
+      TextEditingController();
   final TextEditingController _descriptionController = TextEditingController();
 
   // متغير لتخزين عنوان الـ AppBar الذي سيتم تحديثه بناءً على المدخلات
@@ -49,18 +53,20 @@ class _QuizScreenState extends State<QuizScreen> {
     _descriptionController.dispose();
     super.dispose();
   }
-Widget showLoadingIndicator() {
-  return Padding(
-    padding: const EdgeInsets.all(16.0),
-    child: Center(
-      child: Image.asset(
-        'assets/images/Animation.gif',  
-        width: 150.0,          
-        height: 150.0,
+
+  Widget showLoadingIndicator() {
+    return Padding(
+      padding: const EdgeInsets.all(16.0),
+      child: Center(
+        child: Image.asset(
+          'assets/images/Animation.gif',
+          width: 150.0,
+          height: 150.0,
+        ),
       ),
-    ),
-  );
-}
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     final questionsRepository = QuestionsRepository(
@@ -70,15 +76,13 @@ Widget showLoadingIndicator() {
     return BlocProvider(
       create: (_) => QuizCubit(questionsRepository: questionsRepository),
       child: Scaffold(
+        backgroundColor: const Color(0xfff8f9fD),
         appBar: AppBar(
           // يستخدم العنوان الذي أدخله المستخدم إن وجد، وإلا يظهر العنوان الافتراضي
           title: Text(
             _quizAppBarTitle ?? 'MCQ Quiz',
             style: const TextStyle(
-              color: Colors.white, 
-              fontSize: 20, 
-              fontWeight: FontWeight.w500
-            ),
+                color: Colors.white, fontSize: 20, fontWeight: FontWeight.w500),
           ),
           centerTitle: true,
           leading: IconButton(
@@ -88,10 +92,7 @@ Widget showLoadingIndicator() {
           flexibleSpace: Container(
             decoration: const BoxDecoration(
               gradient: LinearGradient(
-                colors: [
-                  Color.fromARGB(255, 91, 45, 240),
-                  Color.fromARGB(255, 141, 20, 141),
-                ],
+                colors: [Color(0xff9333EA), Color(0xFF3B82F6)],
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
               ),
@@ -103,7 +104,7 @@ Widget showLoadingIndicator() {
             if (state is QuizInitial) {
               return _buildInitialForm(context);
             } else if (state is QuizLoading) {
-              return  Center(child: showLoadingIndicator());
+              return Center(child: showLoadingIndicator());
             } else if (state is QuizLoaded) {
               return _buildAllQuestions(context, state);
             } else if (state is QuizError) {
@@ -118,107 +119,198 @@ Widget showLoadingIndicator() {
 
   Widget _buildInitialForm(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(16.0),
+      padding: const EdgeInsets.all(19),
       child: SingleChildScrollView(
         child: Column(
           children: [
-            Container(
-              margin: const EdgeInsets.only(top: 8, bottom: 15, left: 10, right: 10),
-              height: 65,
-              decoration: BoxDecoration(
-                color: Colors.purple[50],
-                border: Border.all(color: Colors.purple, width: 1),
-              ),
-              child: const Row(
-                children: [
-                  Padding(
-                    padding: EdgeInsets.only(bottom: 0, right: 3, left: 7),
-                    child: Icon(
-                      Icons.info_sharp,
-                      size: 22,
-                      color: Colors.purple,
-                    ),
-                  ),
-                  Expanded(
-                    child: Padding(
-                      padding: EdgeInsets.all(8.0),
-                      child: Text(
-                        "In order to be able to view and answer the questions\n  you must fill in the following fields",
-                        style: TextStyle(
-                          color: Color.fromARGB(255, 23, 22, 22),
-                          fontSize: 15,
-                          fontWeight: FontWeight.w400,
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            const SizedBox(height: 15),
             FadeInDown(
-              duration: const Duration(milliseconds: 650),
-              delay: const Duration(milliseconds: 200),
-              child: Form(
-                child: Column(
+              delay: const Duration(milliseconds: 400),
+              duration: const Duration(milliseconds: 400),
+              child: Container(
+                margin: const EdgeInsets.only(
+                    top: 8, bottom: 15, left: 10, right: 10),
+                height: 65,
+                decoration: BoxDecoration(
+                  color: const Color.fromARGB(255, 239, 230, 248),
+                  border: Border.all(color: const Color(0xff9333EA), width: 1),
+                ),
+                child: const Row(
                   children: [
-                    TextFormField(
-                      controller: _titleController,
-                      decoration: const InputDecoration(
-                        labelText: '  Job Title ',
-                        labelStyle: TextStyle(fontSize: 17, fontWeight: FontWeight.w500, color: Colors.grey),
-                        prefixIcon: Icon(Icons.work_rounded, color: Colors.purple),
+                    Padding(
+                      padding: EdgeInsets.only(bottom: 0, right: 3, left: 7),
+                      child: Icon(
+                        Icons.info_sharp,
+                        size: 22,
+                        color: Color(0xff9333EA),
                       ),
                     ),
-                    const SizedBox(height: 28),
-                    TextFormField(
-                      controller: _requiredSkillController,
-                      decoration: const InputDecoration(
-                        labelText: '  Required Skill',
-                        labelStyle: TextStyle(fontSize: 17, fontWeight: FontWeight.w500, color: Colors.grey),
-                        prefixIcon: Icon(Icons.workspace_premium, color: Colors.purple),
-                      ),
-                    ),
-                    const SizedBox(height: 25),
-                    TextFormField(
-                      controller: _descriptionController,
-                      decoration: const InputDecoration(
-                        labelText: '  Description',
-                        labelStyle: TextStyle(fontSize: 17, fontWeight: FontWeight.w500, color: Colors.grey),
-                        prefixIcon: Icon(Icons.description_rounded, color: Colors.purple),
-                      ),
-                      maxLines: 2,
-                    ),
-                    const SizedBox(height: 34),
-                    ElevatedButton.icon(
-                      style: ElevatedButton.styleFrom(
-                        padding: const EdgeInsets.all(17),
-                        shape: ContinuousRectangleBorder(borderRadius: BorderRadius.circular(14)),
-                        backgroundColor: const Color.fromARGB(255, 154, 70, 168),
-                      ),
-                      onPressed: () {
-                        // تحديث عنوان الـ AppBar بناءً على قيمة job title المدخلة
-                        setState(() {
-                          _quizAppBarTitle = _titleController.text;
-                        });
-                        final title = _titleController.text;
-                        final requiredSkill = _requiredSkillController.text;
-                        final description = _descriptionController.text;
-                        context.read<QuizCubit>().fetchQuiz(
-                          title: title,
-                          requiredSkill: requiredSkill,
-                          description: description,
-                        );
-                      },
-                      label: const Text(
-                        'View Questions',
-                        style: TextStyle(fontSize: 15, fontWeight: FontWeight.w500, color: Colors.white),
+                    Expanded(
+                      child: Padding(
+                        padding: EdgeInsets.all(8.0),
+                        child: Text(
+                          "In order to be able to view and answer the questions\n  you must fill in the following fields",
+                          style: TextStyle(
+                            color: Color.fromARGB(255, 23, 22, 22),
+                            fontSize: 15,
+                            fontWeight: FontWeight.w400,
+                          ),
+                        ),
                       ),
                     ),
                   ],
                 ),
               ),
-            )
+            ),
+            const SizedBox(height: 30),
+            Column(
+              children: [
+                FadeInDown(
+                    delay: const Duration(milliseconds: 400),
+                    duration: const Duration(milliseconds: 400),
+                    child: Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(16),
+                        color: Colors.white,
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.grey.withOpacity(0.2),
+                            blurRadius: 10,
+                            offset: const Offset(0, 5),
+                          ),
+                        ],
+                      ),
+                      child: CustomField(
+                        controller: _titleController,
+                        icon: Icons.work_rounded,
+                        hint: 'Job Title',
+                        gradientColors: const [
+                          Color(0xff9333EA),
+                          Color(0xFF3B82F6)
+                        ],
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return 'Please enter a job title';
+                          }
+                          return null;
+                        },
+                      ),
+                    )),
+                const SizedBox(height: 30),
+                FadeInDown(
+                    delay: const Duration(milliseconds: 400),
+                    duration: const Duration(milliseconds: 400),
+                    child: Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(16),
+                        color: Colors.white,
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.grey.withOpacity(0.2),
+                            blurRadius: 10,
+                            offset: const Offset(0, 5),
+                          ),
+                        ],
+                      ),
+                      child: CustomField(
+                        controller: _requiredSkillController,
+                        icon: Icons.workspace_premium,
+                        hint: 'Required Skill',
+                        gradientColors: const [
+                          Color(0xff9333EA),
+                          Color(0xFF3B82F6)
+                        ],
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return 'Please enter required skill';
+                          }
+                          return null;
+                        },
+                      ),
+                    )),
+                const SizedBox(height: 30),
+                FadeInDown(
+                    delay: const Duration(milliseconds: 400),
+                    duration: const Duration(milliseconds: 400),
+                    child: Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(16),
+                        color: Colors.white,
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.grey.withOpacity(0.2),
+                            blurRadius: 10,
+                            offset: const Offset(0, 5),
+                          ),
+                        ],
+                      ),
+                      child: TextFormField(
+                        controller: _descriptionController,
+                        decoration: InputDecoration(
+                          hintText: ' Description',
+                          hintStyle: const TextStyle(
+                            color: Color(0xFF101010),
+                            fontSize: 16,
+                          ),
+                          prefixIcon: ShaderMask(
+                            shaderCallback: (Rect bounds) {
+                              return MyColors.myGreadient2.createShader(bounds);
+                            },
+                            blendMode: BlendMode.srcIn,
+                            child:
+                                const Icon(Icons.description_rounded, size: 26),
+                          ),
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(16),
+                            borderSide: BorderSide.none,
+                          ),
+                          filled: true,
+                          fillColor: Colors.transparent,
+                        ),
+                        maxLines: 2,
+                      ),
+                    )),
+                const SizedBox(height: 40),
+                 Center(
+                child: Container(
+                  width: 150,
+                  decoration: BoxDecoration(
+                    gradient: MyColors.myGreadient2,
+                    borderRadius: BorderRadius.circular(16),
+                  ),
+                  child:
+                ElevatedButton.icon(
+                  style: ElevatedButton.styleFrom(
+                    padding: const EdgeInsets.all(17),
+                    shape: ContinuousRectangleBorder(
+                        borderRadius: BorderRadius.circular(14)),
+                          backgroundColor: Colors.transparent,
+                      shadowColor: Colors.transparent,
+                    
+                  ),
+                  onPressed: () {
+                    // تحديث عنوان الـ AppBar بناءً على قيمة job title المدخلة
+                    setState(() {
+                      _quizAppBarTitle = _titleController.text;
+                    });
+                    final title = _titleController.text;
+                    final requiredSkill = _requiredSkillController.text;
+                    final description = _descriptionController.text;
+                    context.read<QuizCubit>().fetchQuiz(
+                          title: title,
+                          requiredSkill: requiredSkill,
+                          description: description,
+                        );
+                  },
+                  label: const Text(
+                    'View Questions',
+                    style: TextStyle(
+                        fontSize: 15,
+                        fontWeight: FontWeight.w500,
+                        color: Colors.white),
+                  ),
+                ),))
+              ],
+            ),
           ],
         ),
       ),
@@ -230,9 +322,11 @@ Widget showLoadingIndicator() {
       itemCount: state.questions.length,
       itemBuilder: (context, index) {
         final question = state.questions[index];
-        final selectedAnswer = (index < state.userAnswers.length) ? state.userAnswers[index] : -1;
+        final selectedAnswer =
+            (index < state.userAnswers.length) ? state.userAnswers[index] : -1;
         final isAnswered = selectedAnswer != -1;
-        final isCorrect = isAnswered && (selectedAnswer == question.correctAnswerIndex);
+        final isCorrect =
+            isAnswered && (selectedAnswer == question.correctAnswerIndex);
         final backgroundColor = isAnswered
             ? (isCorrect ? Colors.green.shade100 : Colors.purple.shade100)
             : Colors.white;
@@ -240,7 +334,8 @@ Widget showLoadingIndicator() {
         return Card(
           margin: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 16.0),
           elevation: 2,
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
           child: AnimatedContainer(
             duration: const Duration(milliseconds: 500),
             curve: Curves.easeInOutCirc,
@@ -251,7 +346,8 @@ Widget showLoadingIndicator() {
               children: [
                 Text(
                   question.questionText,
-                  style: const TextStyle(fontSize: 15.0, fontWeight: FontWeight.w700),
+                  style: const TextStyle(
+                      fontSize: 15.0, fontWeight: FontWeight.w700),
                 ),
                 const SizedBox(height: 12),
                 Column(
@@ -259,14 +355,19 @@ Widget showLoadingIndicator() {
                     return RadioListTile<int>(
                       title: Text(
                         question.answers[answerIdx],
-                        style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w400, color: Colors.black87),
+                        style: const TextStyle(
+                            fontSize: 14,
+                            fontWeight: FontWeight.w400,
+                            color: Colors.black87),
                       ),
                       value: answerIdx,
                       groupValue: selectedAnswer,
                       onChanged: isAnswered
                           ? null
                           : (val) {
-                              context.read<QuizCubit>().selectAnswerForQuestion(index, answerIdx);
+                              context
+                                  .read<QuizCubit>()
+                                  .selectAnswerForQuestion(index, answerIdx);
                             },
                     );
                   }),
@@ -274,12 +375,14 @@ Widget showLoadingIndicator() {
                 if (isAnswered && isCorrect)
                   const Text(
                     'Correct ✅',
-                    style: TextStyle(color: Colors.green, fontWeight: FontWeight.w700),
+                    style: TextStyle(
+                        color: Colors.green, fontWeight: FontWeight.w700),
                   )
                 else if (isAnswered && !isCorrect)
                   Text(
                     'Wrong ❌\nThe correct answer is :  ${question.answers[question.correctAnswerIndex]}',
-                    style: const TextStyle(color: Colors.purple, fontWeight: FontWeight.w700),
+                    style: const TextStyle(
+                        color: Color(0xff9333EA), fontWeight: FontWeight.w700),
                   ),
               ],
             ),

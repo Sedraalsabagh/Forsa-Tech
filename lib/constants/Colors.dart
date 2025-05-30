@@ -9,10 +9,9 @@ class MyColors {
   ], begin: Alignment.topLeft, end: Alignment.bottomRight);
 
   static const LinearGradient myGreadient2 = LinearGradient(colors: [
-    Color(0xFF4A15F4),
-    Color(0xFF6B1A6B),
-  ]);
+    // Color(0xFF4A15F4),
+    // Color(0xFF6B1A6B),
+    Color(0xff9333EA), Color(0xFF3B82F6)
+  ],begin: Alignment.topLeft, end: Alignment.bottomRight
+  );
 }
-
-// // ignore: file_names
-// // import 'package:devloper_app/presentaion/screen/SignUP.dart';

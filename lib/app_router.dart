@@ -3,6 +3,7 @@ import 'package:devloper_app/presentaion/screen/ExperienceForm.Screen.dart';
 import 'package:devloper_app/presentaion/screen/experience_screen.dart';
 import 'package:devloper_app/presentaion/screen/forsa_proflile.dart';
 import 'package:devloper_app/presentaion/screen/language.dart';
+import 'package:devloper_app/presentaion/screen/quiz_screen.dart';
 import 'package:devloper_app/presentaion/screen/searchJobScreen.dart';
 import 'package:devloper_app/presentaion/screen/settingScreen.dart';
 import 'package:devloper_app/presentaion/screen/welcomeScreen.dart';
@@ -18,7 +19,7 @@ class AppRouter {
     switch (settings.name) {
       case '/':
         return MaterialPageRoute(
-          builder: (context) => LanguageSelectorPage(),
+          builder: (context) => QuizScreen(),
         );
 
       case '/auth/login/':

@@ -1,5 +1,8 @@
+import 'package:devloper_app/presentaion/screen/FQA.dart';
 import 'package:devloper_app/presentaion/screen/Terms&Conditions.dart';
 import 'package:devloper_app/presentaion/screen/aboutForsaTech.dart';
+import 'package:devloper_app/presentaion/screen/complaint_screen.dart';
+import 'package:devloper_app/presentaion/screen/settings.dart';
 import 'package:flutter/material.dart';
 
 class MenuScreen extends StatelessWidget {
@@ -26,7 +29,7 @@ class MenuScreen extends StatelessWidget {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (_) => DummyScreen(title: 'Invite Friends')));
+                        builder: (_) => const DummyScreen(title: 'Invite Friends')));
               },
             ),
             MenuItem(
@@ -44,7 +47,7 @@ class MenuScreen extends StatelessWidget {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (_) => DummyScreen(title: 'FAQs')));
+                        builder: (_) => FAQPage()));
               },
             ),
             MenuItem(
@@ -54,7 +57,7 @@ class MenuScreen extends StatelessWidget {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (_) => DummyScreen(title: 'Settings')));
+                        builder: (_) => const SettingsScreen()));
               },
             ),
             MenuItem(
@@ -64,7 +67,7 @@ class MenuScreen extends StatelessWidget {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (_) => DummyScreen(title: 'Need help?')));
+                        builder: (_) => const ComplaintScreen()));
               },
             ),
             MenuItem(
@@ -75,7 +78,7 @@ class MenuScreen extends StatelessWidget {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (_) => DummyScreen(title: 'Log in')));
+                        builder: (_) => const DummyScreen(title: 'Log in')));
               },
             ),
           ],
@@ -106,7 +109,7 @@ class MenuItem extends StatelessWidget {
         onTap: onTap,
         borderRadius: BorderRadius.circular(20),
         child: Container(
-          padding: EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
           decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(20),
@@ -114,14 +117,14 @@ class MenuItem extends StatelessWidget {
               BoxShadow(
                 color: Colors.grey.withOpacity(0.2),
                 blurRadius: 8,
-                offset: Offset(0, 4),
+                offset: const Offset(0, 4),
               ),
             ],
           ),
           child: Row(
             children: [
               Icon(icon, color: color ?? Colors.black),
-              SizedBox(width: 16),
+              const SizedBox(width: 16),
               Expanded(
                 child: Text(
                   text,
@@ -132,7 +135,7 @@ class MenuItem extends StatelessWidget {
                   ),
                 ),
               ),
-              Icon(Icons.arrow_forward_ios, size: 16, color: Colors.grey),
+              const Icon(Icons.arrow_forward_ios, size: 16, color: Colors.grey),
             ],
           ),
         ),
@@ -156,7 +159,7 @@ class DummyScreen extends StatelessWidget {
       body: Center(
         child: Text(
           'This is $title page!',
-          style: TextStyle(fontSize: 24),
+          style: const TextStyle(fontSize: 24),
         ),
       ),
     );
